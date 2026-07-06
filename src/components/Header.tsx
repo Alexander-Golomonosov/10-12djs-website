@@ -15,7 +15,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-accent/20 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-3">
-          <div className="h-9 w-9 overflow-hidden rounded-full border border-accent/40">
+          <div className="h-9 w-9 overflow-hidden rounded-full">
             <Image
               src="/logo.svg"
               alt="10/12DJ'S"

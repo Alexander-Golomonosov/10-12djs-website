@@ -30,15 +30,21 @@ export default function Home() {
         <span className="graffiti-tag -top-10 -left-20 rotate-[-15deg]">10/12</span>
         <span className="graffiti-tag bottom-20 -right-40 rotate-[20deg]">DJ</span>
         <span className="graffiti-tag-light top-1/3 left-1/2 -translate-x-1/2 rotate-[-8deg]">DJS</span>
+        <span className="graffiti-tag bottom-40 -left-10 rotate-[25deg] opacity-[0.02]">CREW</span>
+        <span className="graffiti-tag-light top-10 right-10 rotate-[-5deg] opacity-[0.01]">UNDERGROUND</span>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ff4242_0%,_transparent_60%)] opacity-15" />
         <div className="absolute top-1/4 left-4 h-32 w-1 bg-accent/30 rotate-[30deg]" />
         <div className="absolute bottom-1/4 right-8 h-48 w-1 bg-accent/20 rotate-[-20deg]" />
         <div className="absolute top-1/3 right-1/4 border-2 border-accent/10 px-6 py-2 rotate-12">
           <span className="text-[8px] font-bold tracking-[0.3em] text-accent/30">UNDERGROUND</span>
         </div>
+        <div className="absolute bottom-1/3 left-8 h-px w-32 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 rotate-45" />
+        <div className="absolute top-1/2 right-12 h-px w-24 bg-gradient-to-r from-accent/0 via-accent/15 to-accent/0 -rotate-30" />
+        <div className="absolute top-20 left-1/4 h-6 w-6 border-2 border-accent/10 rotate-45" />
+        <div className="absolute bottom-32 right-1/4 h-4 w-4 border border-accent/10 rotate-12" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-8 flex justify-center">
-            <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-accent/40 logo-pulse">
+            <div className="h-28 w-28 overflow-hidden rounded-full logo-pulse">
               <Image
                 src="/logo.svg"
                 alt="10/12DJ'S"
