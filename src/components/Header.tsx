@@ -19,7 +19,7 @@ export default function Header() {
             alt="10/12DJ'S"
             width={36}
             height={36}
-            className="object-contain"
+            className="object-contain logo-glitch"
           />
           <span className="hidden text-[10px] font-bold tracking-[0.2em] sm:inline">10/12DJ&apos;S</span>
         </Link>

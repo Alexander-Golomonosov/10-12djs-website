@@ -78,3 +78,42 @@ body::before {
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
+@keyframes logo-glow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 66, 66, 0.3)) drop-shadow(0 0 60px rgba(255, 66, 66, 0.1)); }
+  50% { filter: drop-shadow(0 0 30px rgba(255, 66, 66, 0.5)) drop-shadow(0 0 80px rgba(255, 66, 66, 0.2)); }
+}
+
+@keyframes glitch {
+  0%, 90%, 100% { transform: translate(0); opacity: 1; }
+  92% { transform: translate(-2px, 1px); opacity: 0.8; }
+  94% { transform: translate(2px, -1px); opacity: 0.9; }
+  96% { transform: translate(-1px, -2px); opacity: 0.7; }
+  98% { transform: translate(1px, 2px); opacity: 0.85; }
+}
+
+@keyframes glitch-slice {
+  0%, 85%, 100% { clip-path: inset(0); transform: translate(0); }
+  86% { clip-path: inset(20% 0 60% 0); transform: translate(3px); }
+  88% { clip-path: inset(50% 0 30% 0); transform: translate(-3px); }
+  90% { clip-path: inset(10% 0 70% 0); transform: translate(2px); }
+  92% { clip-path: inset(60% 0 20% 0); transform: translate(-2px); }
+}
+
+.logo-glitch {
+  animation: logo-glow 3s ease-in-out infinite;
+  position: relative;
+}
+
+.logo-glitch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0;
+  animation: glitch 4s infinite;
+}
+
+.logo-glitch-hero {
+  animation: logo-glow 2s ease-in-out infinite, glitch-slice 5s infinite;
+}

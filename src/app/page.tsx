@@ -43,7 +43,7 @@ export default function Home() {
               alt="10/12DJ'S"
               width={100}
               height={100}
-              className="object-contain opacity-90"
+              className="object-contain opacity-90 logo-glitch-hero"
               priority
             />
           </div>
