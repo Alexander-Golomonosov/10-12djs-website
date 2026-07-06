@@ -14,53 +14,53 @@ export default function ContactForm() {
   return (
     <form action={formAction} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-foreground">
-          Имя
+        <label htmlFor="name" className="block text-xs font-bold tracking-widest text-foreground">
+          ИМЯ
         </label>
         <input
           type="text"
           id="name"
           name="name"
           required
-          className="mt-1 w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground placeholder-muted outline-none transition-colors focus:border-accent"
-          placeholder="Ваше имя"
+          className="mt-2 w-full border-2 border-border/30 bg-card px-4 py-3 text-xs font-semibold text-foreground placeholder-muted outline-none transition-colors focus:border-accent"
+          placeholder="ВАШЕ ИМЯ"
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-foreground">
-          Email
+        <label htmlFor="email" className="block text-xs font-bold tracking-widest text-foreground">
+          EMAIL
         </label>
         <input
           type="email"
           id="email"
           name="email"
           required
-          className="mt-1 w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground placeholder-muted outline-none transition-colors focus:border-accent"
-          placeholder="your@email.com"
+          className="mt-2 w-full border-2 border-border/30 bg-card px-4 py-3 text-xs font-semibold text-foreground placeholder-muted outline-none transition-colors focus:border-accent"
+          placeholder="YOUR@EMAIL.COM"
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-foreground">
-          Сообщение
+        <label htmlFor="message" className="block text-xs font-bold tracking-widest text-foreground">
+          СООБЩЕНИЕ
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          className="mt-1 w-full resize-none rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground placeholder-muted outline-none transition-colors focus:border-accent"
-          placeholder="Напишите нам..."
+          className="mt-2 w-full resize-none border-2 border-border/30 bg-card px-4 py-3 text-xs font-semibold text-foreground placeholder-muted outline-none transition-colors focus:border-accent"
+          placeholder="НАПИШИТЕ НАМ..."
         />
       </div>
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-all hover:bg-accent-hover disabled:opacity-50"
+        className="w-full border-2 border-accent bg-accent px-6 py-4 text-xs font-bold tracking-widest text-white transition-all hover:bg-accent-hover hover:border-accent-hover disabled:opacity-50"
       >
-        {pending ? "Отправка..." : "Отправить"}
+        {pending ? "ОТПРАВКА..." : "ОТПРАВИТЬ"}
       </button>
       {state.message && (
-        <p className={`text-center text-sm ${state.success ? "text-green-400" : "text-red-400"}`}>
+        <p className={`text-center text-xs font-bold tracking-wider ${state.success ? "text-accent" : "text-red-400"}`}>
           {state.message}
         </p>
       )}

@@ -1,23 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 import NewsCard from "@/components/NewsCard";
 
 const latestNews = [
   {
-    title: "Летний фестиваль 2026",
-    excerpt: "10/12DJ'S выступят на главной сцене летнего фестиваля в этом году. Готовьтесь к незабываемому сету!",
-    date: "15 июня 2026",
+    title: "ЛЕТНИЙ ФЕСТИВАЛЬ 2026",
+    excerpt: "10/12DJ'S ВЫСТУПЯТ НА ГЛАВНОЙ СЦЕНЕ ЛЕТНЕГО ФЕСТИВАЛЯ. ГОТОВЬТЕСЬ К НЕЗАБЫВАЕМОМУ СЕТУ!",
+    date: "15 ИЮНЯ 2026",
     slug: "summer-festival-2026",
   },
   {
-    title: "Новый микс в эфире",
-    excerpt: "Свежий часовой микс от нашего резидента уже доступен на SoundCloud. Техно, хаус и брейкбит.",
-    date: "1 июня 2026",
+    title: "НОВЫЙ МИКС В ЭФИРЕ",
+    excerpt: "СВЕЖИЙ ЧАСОВОЙ МИКС ОТ НАШЕГО РЕЗИДЕНТА УЖЕ ДОСТУПЕН НА SOUNDCLOUD.",
+    date: "1 ИЮНЯ 2026",
     slug: "new-mix",
   },
   {
-    title: "Клубный тур по городам",
-    excerpt: "Отправляемся в тур по 5 городам. Следите за расписанием и бронируйте билеты заранее.",
-    date: "20 мая 2026",
+    title: "КЛУБНЫЙ ТУР ПО ГОРОДАМ",
+    excerpt: "ОТПРАВЛЯЕМСЯ В ТУР ПО 5 ГОРОДАМ. СЛЕДИТЕ ЗА РАСПИСАНИЕМ.",
+    date: "20 МАЯ 2026",
     slug: "club-tour",
   },
 ];
@@ -26,27 +27,39 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-accent)_0%,_transparent_70%)] opacity-20" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ff4242_0%,_transparent_70%)] opacity-20" />
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 border-2 border-accent/10 rotate-12" />
+        <div className="absolute bottom-1/3 right-1/4 h-48 w-48 border-2 border-accent/10 -rotate-6" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+          <div className="mb-8 flex justify-center">
+            <Image
+              src="/logo.png"
+              alt="10/12DJ'S"
+              width={120}
+              height={120}
+              className="object-contain"
+              priority
+            />
+          </div>
+          <h1 className="text-6xl font-black tracking-tighter sm:text-8xl">
             <span className="gradient-text">10/12DJ&apos;S</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl">
-            Команда профессиональных диджеев. Создаём атмосферу, заставляем танцевать,
-            объединяем музыкой.
+          <p className="mx-auto mt-6 max-w-2xl text-sm font-semibold tracking-widest text-muted sm:text-base">
+            10/12DJ&apos;S — КОМАНДА ПРОФЕССИОНАЛЬНЫХ ДИДЖЕЕВ.<br />
+            МУЗЫКА — НАШЕ ОРУЖИЕ. ТАНЦПОЛ — НАША ТЕРРИТОРИЯ.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
+          <div className="mt-12 flex items-center justify-center gap-6">
             <Link
               href="/contact"
-              className="rounded-full bg-accent px-8 py-3 text-sm font-medium text-white transition-all hover:bg-accent-hover"
+              className="border-2 border-accent bg-accent px-10 py-4 text-xs font-bold tracking-widest text-white transition-all hover:bg-accent-hover"
             >
-              Связаться с нами
+              СВЯЗАТЬСЯ
             </Link>
             <Link
               href="/news"
-              className="rounded-full border border-border px-8 py-3 text-sm font-medium text-muted transition-all hover:border-accent/50 hover:text-foreground"
+              className="border-2 border-border/30 px-10 py-4 text-xs font-bold tracking-widest text-muted transition-all hover:border-accent/50 hover:text-foreground"
             >
-              Новости
+              НОВОСТИ
             </Link>
           </div>
         </div>
@@ -55,42 +68,40 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">Кто мы</h2>
-            <p className="mt-4 text-muted leading-relaxed">
-              Мы — команда диджеев, объединённых любовью к качественной музыке.
-              Каждый наш сет — это путешествие. Играем техно, хаус, брейкбит и
-              всё, что заставляет толпу двигаться.
+            <h2 className="text-3xl font-black tracking-tighter">КТО МЫ</h2>
+            <p className="mt-6 text-xs font-semibold leading-relaxed tracking-wider text-muted">
+              МЫ — КОМАНДА ДИДЖЕЕВ, ОБЪЕДИНЁННЫХ ЛЮБОВЬЮ К КАЧЕСТВЕННОЙ МУЗЫКЕ.
+              КАЖДЫЙ НАШ СЕТ — ЭТО ПУТЕШЕСТВИЕ. ИГРАЕМ ТЕХНО, ХАУС, БРЕЙКБИТ И
+              ВСЁ, ЧТО ЗАСТАВЛЯЕТ ТОЛПУ ДВИГАТЬСЯ.
             </p>
             <Link
               href="/about"
-              className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+              className="mt-8 inline-flex items-center gap-2 text-xs font-bold tracking-widest text-accent transition-colors hover:text-accent-hover"
             >
-              Узнать больше
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              УЗНАТЬ БОЛЬШЕ →
             </Link>
           </div>
           <div className="relative">
-            <div className="aspect-video rounded-xl border border-border bg-card" />
+            <div className="aspect-video border-2 border-accent/20 bg-card" />
+            <div className="absolute -top-4 -left-4 h-full w-full border-2 border-accent/10 -z-10" />
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-24">
-        <div className="flex items-end justify-between">
+        <div className="flex items-end justify-between border-b-2 border-accent/20 pb-6">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">Последние новости</h2>
-            <p className="mt-2 text-muted">Будьте в курсе наших событий</p>
+            <h2 className="text-3xl font-black tracking-tighter">ПОСЛЕДНИЕ НОВОСТИ</h2>
+            <p className="mt-2 text-xs font-semibold tracking-widest text-muted">БУДЬТЕ В КУРСЕ</p>
           </div>
           <Link
             href="/news"
-            className="hidden text-sm font-medium text-accent transition-colors hover:text-accent-hover sm:inline-flex"
+            className="hidden text-xs font-bold tracking-widest text-accent transition-colors hover:text-accent-hover sm:inline-flex"
           >
-            Все новости →
+            ВСЕ НОВОСТИ →
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
           {latestNews.map((item) => (
             <NewsCard key={item.slug} {...item} />
           ))}

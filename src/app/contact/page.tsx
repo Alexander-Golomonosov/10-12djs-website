@@ -2,75 +2,51 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Контакты | 10/12DJ'S",
+  title: "КОНТАКТЫ | 10/12DJ'S",
 };
 
 export default function Contact() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-24">
-      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-        <span className="gradient-text">Контакты</span>
+      <h1 className="text-5xl font-black tracking-tighter sm:text-6xl">
+        <span className="gradient-text">КОНТАКТЫ</span>
       </h1>
-      <p className="mt-4 text-muted">Напишите нам — мы всегда на связи</p>
+      <p className="mt-4 text-xs font-semibold tracking-widest text-muted">НАПИШИТЕ НАМ</p>
 
-      <div className="mt-12 grid gap-12 lg:grid-cols-2">
+      <div className="mt-16 grid gap-16 lg:grid-cols-2">
         <div>
           <ContactForm />
         </div>
-        <div className="space-y-8">
+        <div className="space-y-12">
           <div>
-            <h3 className="text-lg font-semibold">Свяжитесь с нами</h3>
-            <p className="mt-2 text-sm text-muted">
-              По вопросам бронирования, коллабораций и сотрудничества:
-            </p>
+            <h3 className="text-sm font-bold tracking-wider">СВЯЗЬ</h3>
             <a
               href="mailto:hello@1012djs.com"
-              className="mt-2 inline-block text-accent transition-colors hover:text-accent-hover"
+              className="mt-4 inline-block text-xs font-semibold tracking-widest text-accent transition-colors hover:text-accent-hover"
             >
-              hello@1012djs.com
+              HELLO@1012DJS.COM
             </a>
           </div>
           <div>
-            <h3 className="text-lg font-semibold">Социальные сети</h3>
-            <div className="mt-2 flex flex-wrap gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted transition-colors hover:text-accent"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://soundcloud.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted transition-colors hover:text-accent"
-              >
-                SoundCloud
-              </a>
-              <a
-                href="https://mixcloud.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted transition-colors hover:text-accent"
-              >
-                Mixcloud
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted transition-colors hover:text-accent"
-              >
-                YouTube
-              </a>
+            <h3 className="text-sm font-bold tracking-wider">СОЦСЕТИ</h3>
+            <div className="mt-4 flex flex-wrap gap-6">
+              {["INSTAGRAM", "SOUNDCLOUD", "MIXCLOUD", "YOUTUBE"].map((s) => (
+                <a
+                  key={s}
+                  href={`https://${s.toLowerCase()}.com`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold tracking-widest text-muted transition-colors hover:text-accent"
+                >
+                  {s}
+                </a>
+              ))}
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-semibold">Ближайшие выступления</h3>
-            <p className="mt-2 text-sm text-muted">
-              Следите за анонсами в разделе новостей и наших соцсетях.
+            <h3 className="text-sm font-bold tracking-wider">ВЫСТУПЛЕНИЯ</h3>
+            <p className="mt-4 text-xs font-semibold tracking-wider text-muted">
+              СЛЕДИТЕ ЗА АНОНСАМИ В НОВОСТЯХ И СОЦСЕТЯХ.
             </p>
           </div>
         </div>

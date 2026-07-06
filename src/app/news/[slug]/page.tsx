@@ -4,34 +4,34 @@ import { notFound } from "next/navigation";
 
 const newsItems: Record<string, { title: string; date: string; content: string }> = {
   "summer-festival-2026": {
-    title: "Летний фестиваль 2026",
-    date: "15 июня 2026",
+    title: "ЛЕТНИЙ ФЕСТИВАЛЬ 2026",
+    date: "15 ИЮНЯ 2026",
     content:
-      "Мы рады объявить, что 10/12DJ'S выступят на главной сцене летнего фестиваля в этом году! Это будет наш самый масштабный сет. Мы подготовили специальную программу, которая объединит лучшие треки последних лет и новые экспериментальные сеты. Следите за анонсами — вас ждёт много сюрпризов.",
+      "МЫ РАДЫ ОБЪЯВИТЬ, ЧТО 10/12DJ'S ВЫСТУПЯТ НА ГЛАВНОЙ СЦЕНЕ ЛЕТНЕГО ФЕСТИВАЛЯ В ЭТОМ ГОДУ! ЭТО БУДЕТ НАШ САМЫЙ МАСШТАБНЫЙ СЕТ. МЫ ПОДГОТОВИЛИ СПЕЦИАЛЬНУЮ ПРОГРАММУ, КОТОРАЯ ОБЪЕДИНИТ ЛУЧШИЕ ТРЕКИ ПОСЛЕДНИХ ЛЕТ И НОВЫЕ ЭКСПЕРИМЕНТАЛЬНЫЕ СЕТЫ. СЛЕДИТЕ ЗА АНОНСАМИ — ВАС ЖДЁТ МНОГО СЮРПРИЗОВ.",
   },
   "new-mix": {
-    title: "Новый микс в эфире",
-    date: "1 июня 2026",
+    title: "НОВЫЙ МИКС В ЭФИРЕ",
+    date: "1 ИЮНЯ 2026",
     content:
-      "Свежий часовой микс от нашего резидента уже доступен на SoundCloud. Техно, хаус и брейкбит — мы собрали лучшее из этих жанров в одном сете. Микс получился энергичным и атмосферным. Идеально подходит для дороги, тренировки или подготовки к вечеринке.",
+      "СВЕЖИЙ ЧАСОВОЙ МИКС ОТ НАШЕГО РЕЗИДЕНТА УЖЕ ДОСТУПЕН НА SOUNDCLOUD. ТЕХНО, ХАУС И БРЕЙКБИТ — МЫ СОБРАЛИ ЛУЧШЕЕ ИЗ ЭТИХ ЖАНРОВ В ОДНОМ СЕТЕ. МИКС ПОЛУЧИЛСЯ ЭНЕРГИЧНЫМ И АТМОСФЕРНЫМ.",
   },
   "club-tour": {
-    title: "Клубный тур по городам",
-    date: "20 мая 2026",
+    title: "КЛУБНЫЙ ТУР ПО ГОРОДАМ",
+    date: "20 МАЯ 2026",
     content:
-      "Отправляемся в тур по 5 городам! В программе: Москва, Санкт-Петербург, Казань, Екатеринбург и Краснодар. В каждом городе мы подготовили уникальный сет с учётом локальной атмосферы. Билеты уже в продаже. Торопитесь — количество мест ограничено.",
+      "ОТПРАВЛЯЕМСЯ В ТУР ПО 5 ГОРОДАМ! В ПРОГРАММЕ: МОСКВА, САНКТ-ПЕТЕРБУРГ, КАЗАНЬ, ЕКАТЕРИНБУРГ И КРАСНОДАР. В КАЖДОМ ГОРОДЕ МЫ ПОДГОТОВИЛИ УНИКАЛЬНЫЙ СЕТ. БИЛЕТЫ УЖЕ В ПРОДАЖЕ.",
   },
   "label-collab": {
-    title: "Коллаборация с новым лейблом",
-    date: "10 мая 2026",
+    title: "КОЛЛАБОРАЦИЯ С НОВЫМ ЛЕЙБЛОМ",
+    date: "10 МАЯ 2026",
     content:
-      "Мы рады объявить о сотрудничестве с независимым лейблом Bassport Records. В ближайшее время выйдет наш первый совместный релиз — EP из трёх треков. Работа над материалом шла несколько месяцев, и мы уверены, что результат вас впечатлит.",
+      "МЫ РАДЫ ОБЪЯВИТЬ О СОТРУДНИЧЕСТВЕ С НЕЗАВИСИМЫМ ЛЕЙБЛОМ BASSPORT RECORDS. В БЛИЖАЙШЕЕ ВРЕМЯ ВЫЙДЕТ НАШ ПЕРВЫЙ СОВМЕСТНЫЙ РЕЛИЗ — EP ИЗ ТРЁХ ТРЕКОВ.",
   },
   "night-drive-remix": {
-    title: "Ремикс на трек Night Drive",
-    date: "25 апреля 2026",
+    title: "РЕМИКС НА ТРЕК NIGHT DRIVE",
+    date: "25 АПРЕЛЯ 2026",
     content:
-      "Наш ремикс на трек Night Drive вышел на всех площадках. Мы переосмыслили оригинал, добавив тяжёлые басы и техно-ритм. Трек уже получил поддержку от известных диджеев. Слушайте на Spotify, Apple Music и других стриминг-сервисах.",
+      "НАШ РЕМИКС НА ТРЕК NIGHT DRIVE ВЫШЕЛ НА ВСЕХ ПЛОЩАДКАХ. МЫ ПЕРЕОСМЫСЛИЛИ ОРИГИНАЛ, ДОБАВИВ ТЯЖЁЛЫЕ БАСЫ И ТЕХНО-РИТМ. ТРЕК УЖЕ ПОЛУЧИЛ ПОДДЕРЖКУ ОТ ИЗВЕСТНЫХ ДИДЖЕЕВ.",
   },
 };
 
@@ -58,17 +58,14 @@ export default async function NewsDetail({ params }: { params: Promise<{ slug: s
     <div className="mx-auto max-w-3xl px-4 py-24">
       <Link
         href="/news"
-        className="inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-foreground"
+        className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-muted transition-colors hover:text-accent"
       >
-        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        Назад к новостям
+        ← НАЗАД К НОВОСТЯМ
       </Link>
-      <article className="mt-8">
-        <time className="text-sm text-muted">{item.date}</time>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{item.title}</h1>
-        <div className="mt-8 leading-relaxed text-muted">
+      <article className="mt-8 border-t-2 border-accent/20 pt-8">
+        <time className="text-xs font-semibold tracking-widest text-muted">{item.date}</time>
+        <h1 className="mt-4 text-3xl font-black tracking-tighter sm:text-4xl">{item.title}</h1>
+        <div className="mt-8 text-xs font-semibold leading-relaxed tracking-wider text-muted">
           <p>{item.content}</p>
         </div>
       </article>
