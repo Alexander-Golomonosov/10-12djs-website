@@ -19,6 +19,12 @@ const artists = [
     photo: "/artists/xoniad.jpg",
   },
   {
+    nick: "DEAD RIPPLE",
+    role: "ХАРД-ТЕХНО ДИДЖЕЙ",
+    bio: "ХАРД-ТЕХНО И БЕЗУПРЕЧНЫЙ СТИЛЬ. ТЯЖЁЛЫЙ КИК И ТЁМНАЯ АТМОСФЕРА — ЕГО ВИЗИТНАЯ КАРТОЧКА.",
+    photo: "/artists/deadripple.jpg",
+  },
+  {
     nick: "FEBB TUFOE",
     role: "ДИДЖЕЙ И ПРОДЮСЕР, BASS HOUSE / UK GARAGE",
     bio: "ПИШЕТ МУЗЫКУ В СТИЛЯХ БАСХАУС И ЮКЕЙ ГАРАЖ. МАСТЕР ТЯЖЁЛОГО БАСА И ГРУВА.",
