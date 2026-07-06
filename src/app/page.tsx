@@ -48,7 +48,7 @@ export default function Home() {
             />
           </div>
           <h1 className="text-6xl font-black tracking-tighter sm:text-8xl">
-            <span className="gradient-text">10/12DJ&apos;S</span>
+            <span className="gradient-text text-glitch" data-text="10/12DJ'S">10/12DJ&apos;S</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xs font-semibold tracking-[0.2em] text-muted sm:text-sm">
             10/12DJ&apos;S — КОМАНДА ПРОФЕССИОНАЛЬНЫХ ДИДЖЕЕВ.<br />

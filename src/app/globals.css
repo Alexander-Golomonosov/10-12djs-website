@@ -117,3 +117,39 @@ body::before {
 .logo-glitch-hero {
   animation: logo-glow 2s ease-in-out infinite, glitch-slice 5s infinite;
 }
+
+@keyframes text-glitch-anim {
+  0%, 85%, 100% { clip-path: inset(0); transform: translate(0); }
+  86% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 2px); }
+  88% { clip-path: inset(50% 0 30% 0); transform: translate(3px, -1px); }
+  90% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 1px); }
+  92% { clip-path: inset(60% 0 20% 0); transform: translate(2px, -2px); }
+}
+
+.text-glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.text-glitch::before,
+.text-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.text-glitch::before {
+  color: #ff4242;
+  z-index: -1;
+  animation: glitch 3.5s infinite;
+}
+
+.text-glitch::after {
+  color: #22d3ee;
+  z-index: -2;
+  animation: glitch 3.5s infinite 0.15s;
+}
