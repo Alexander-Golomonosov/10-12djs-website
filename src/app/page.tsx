@@ -91,7 +91,13 @@ export default function Home() {
             </Link>
           </div>
           <div className="relative">
-            <div className="aspect-video border-2 border-accent/20 bg-gradient-to-br from-accent/5 to-accent/10" />
+            <Image
+              src="/about-hero.jpg"
+              alt="10/12DJ'S"
+              width={800}
+              height={600}
+              className="aspect-video border-2 border-accent/20 object-cover"
+            />
             <div className="absolute -top-4 -left-4 h-full w-full border-2 border-accent/5 -z-10" />
             <div className="absolute -bottom-4 -right-4 h-full w-full border border-accent/10 -z-10" />
           </div>
