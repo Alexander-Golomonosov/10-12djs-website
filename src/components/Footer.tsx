@@ -6,15 +6,19 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} 10/12DJ&apos;S
         </p>
         <div className="flex items-center gap-8">
-          {["Instagram", "SoundCloud", "Mixcloud"].map((s) => (
+          {[
+            { name: "TELEGRAM", url: "https://t.me/I0_12_djs" },
+            { name: "VK", url: "https://vk.com/10djs12" },
+            { name: "YOUTUBE", url: "https://www.youtube.com/@1012djs" },
+          ].map((s) => (
             <a
-              key={s}
-              href={`https://${s.toLowerCase()}.com`}
+              key={s.name}
+              href={s.url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] font-semibold tracking-[0.2em] text-muted transition-colors hover:text-accent"
             >
-              {s.toUpperCase()}
+              {s.name}
             </a>
           ))}
         </div>

@@ -34,15 +34,19 @@ export default function Contact() {
             <h3 className="text-sm font-bold tracking-wider">СОЦСЕТИ</h3>
             <div className="mt-2 h-px w-12 bg-accent" />
             <div className="mt-4 flex flex-wrap gap-6">
-              {["INSTAGRAM", "SOUNDCLOUD", "MIXCLOUD", "YOUTUBE"].map((s) => (
+              {[
+                { name: "TELEGRAM", url: "https://t.me/I0_12_djs" },
+                { name: "VK", url: "https://vk.com/10djs12" },
+                { name: "YOUTUBE", url: "https://www.youtube.com/@1012djs" },
+              ].map((s) => (
                 <a
-                  key={s}
-                  href={`https://${s.toLowerCase()}.com`}
+                  key={s.name}
+                  href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-semibold tracking-[0.2em] text-muted transition-colors hover:text-accent"
                 >
-                  {s}
+                  {s.name}
                 </a>
               ))}
             </div>
