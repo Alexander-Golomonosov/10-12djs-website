@@ -1,42 +1,71 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "О НАС | 10/12DJ'S",
 };
 
-const team = [
-  { name: "ALEX", role: "TECH HOUSE / TECHNO", bio: "ОСНОВАТЕЛЬ. ЗА ПУЛЬТОМ С 2015." },
-  { name: "MIKE", role: "BREAKS / BASS", bio: "МАСТЕР ТЁМНЫХ БАСОВ И ДРАЙВА." },
-  { name: "KATE", role: "DEEP HOUSE", bio: "МЕЛОДИЧНЫЙ ХАУС И АТМОСФЕРА." },
+const artists = [
+  {
+    nick: "FCKNGD1",
+    role: "ОСНОВАТЕЛЬ, TECH HOUSE / TECHNO",
+    bio: "ЗА ПУЛЬТОМ С 2015. СОЗДАТЕЛЬ 10/12DJ'S. ЕГО СЕТЫ — ЭТО ТЁМНАЯ ЭНЕРГИЯ И ДРАЙВ, ОТ КОТОРЫХ ТАНЦПОЛ ВЗРЫВАЕТСЯ.",
+    photo: "/artists/fckngd1.jpg",
+  },
 ];
 
 export default function About() {
   return (
     <div className="relative mx-auto max-w-6xl px-4 py-24">
-      <span className="graffiti-tag -top-20 -right-10 rotate-[8deg]">CREW</span>
-      <span className="graffiti-tag-light bottom-40 -left-24 rotate-[-15deg]">FAMILY</span>
+      <span className="graffiti-tag" style={{ top: '-8%', right: '-5%', rotate: '8deg' }}>CREW</span>
+      <span className="graffiti-tag-light" style={{ bottom: '30%', left: '-10%', rotate: '-15deg', animationDelay: '-4s' }}>FAMILY</span>
+      <span className="graffiti-tag-solid" style={{ top: '20%', right: '-15%', rotate: '20deg' }}>DJS</span>
+
       <h1 className="text-5xl font-black tracking-tighter sm:text-6xl">
         <span className="gradient-text">О НАС</span>
       </h1>
       <div className="mt-2 h-1 w-20 bg-accent" />
-      <p className="mt-8 max-w-3xl text-xs font-semibold leading-relaxed tracking-wider text-muted sm:text-sm">
+      <p className="mt-8 max-w-3xl text-xs font-semibold leading-relaxed tracking-wider text-muted/80 sm:text-sm">
         10/12DJ&apos;S — КОМАНДА, РОДИВШАЯСЯ ИЗ ЛЮБВИ К ЭЛЕКТРОННОЙ МУЗЫКЕ.
         МЫ ОБЪЕДИНИЛИСЬ, ЧТОБЫ СОЗДАВАТЬ УНИКАЛЬНЫЕ МУЗЫКАЛЬНЫЕ ВПЕЧАТЛЕНИЯ.
         КАЖДЫЙ НАШ СЕТ — ЭТО ИСТОРИЯ, РАССКАЗАННАЯ ЯЗЫКОМ РИТМА И МЕЛОДИИ.
       </p>
 
-      <div className="mt-16 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
-        {team.map((member) => (
+      <div className="mt-20">
+        <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● АРТИСТЫ</span>
+        <h2 className="mt-2 text-3xl font-black tracking-tighter">СОСТАВ</h2>
+        <div className="mt-2 h-1 w-16 bg-accent" />
+      </div>
+
+      <div className="mt-10 grid gap-8">
+        {artists.map((a) => (
           <div
-            key={member.name}
-            className="border border-border/20 bg-card p-8 transition-all hover:border-accent/40"
+            key={a.nick}
+            className="group grid gap-8 border border-border/20 bg-card p-6 transition-all hover:border-accent/30 sm:grid-cols-[200px_1fr] sm:p-10"
           >
-            <div className="mb-6 flex h-16 w-16 items-center justify-center border border-accent/50 bg-accent/5 text-xl font-black text-accent">
-              {member.name[0]}
+            <div className="relative aspect-square overflow-hidden border-2 border-accent/20">
+              <Image
+                src={a.photo}
+                alt={a.nick}
+                width={400}
+                height={400}
+                className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
+              />
             </div>
-            <h3 className="text-sm font-bold tracking-wider">{member.name}</h3>
-            <p className="mt-1 text-[10px] font-semibold tracking-[0.2em] text-accent">{member.role}</p>
-            <p className="mt-4 text-xs font-semibold tracking-wider text-muted">{member.bio}</p>
+            <div className="flex flex-col justify-center">
+              <div className="flex items-center gap-4">
+                <h3 className="text-2xl font-black tracking-tighter transition-colors group-hover:text-accent">
+                  {a.nick}
+                </h3>
+              </div>
+              <p className="mt-1 text-[10px] font-semibold tracking-[0.2em] text-accent/80">
+                {a.role}
+              </p>
+              <div className="mt-4 h-px w-12 bg-accent/50" />
+              <p className="mt-4 text-xs font-semibold leading-relaxed tracking-wider text-muted/80">
+                {a.bio}
+              </p>
+            </div>
           </div>
         ))}
       </div>
@@ -48,7 +77,7 @@ export default function About() {
           <span className="gradient-text">АНДЕГРАУНД СЦЕНЫ</span>
         </h2>
         <div className="mt-4 h-1 w-16 bg-accent" />
-        <div className="mt-8 max-w-4xl space-y-4 text-xs font-semibold leading-relaxed tracking-wider text-muted sm:text-sm">
+        <div className="mt-8 max-w-4xl space-y-4 text-xs font-semibold leading-relaxed tracking-wider text-muted/80 sm:text-sm">
           <p>
             МЫ ХОТИМ ИГРАТЬ МУЗЫКУ НЕ ДЛЯ НАРКОМАНОВ.
             МЫ ХОТИМ ПРИВЛЕЧЬ НОВУЮ АУДИТОРИЮ, ПОКАЗАТЬ, ЧТО АНДЕГРАУНД —
