@@ -38,14 +38,16 @@ export default function Home() {
         </div>
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-8 flex justify-center">
-            <Image
-              src="/logo.png"
-              alt="10/12DJ'S"
-              width={100}
-              height={100}
-              className="rounded-full object-cover opacity-90 logo-glitch-hero"
-              priority
-            />
+            <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-accent/40 logo-glitch-hero">
+              <Image
+                src="/logo.png"
+                alt="10/12DJ'S"
+                width={120}
+                height={120}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
           </div>
           <h1 className="text-6xl font-black tracking-tighter sm:text-8xl">
             <span className="gradient-text text-glitch" data-text="10/12DJ'S">10/12DJ&apos;S</span>
