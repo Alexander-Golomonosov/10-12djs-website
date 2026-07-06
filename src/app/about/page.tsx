@@ -41,14 +41,32 @@ export default function About() {
         ))}
       </div>
 
-      <div className="mt-24 border-t border-accent/20 pt-16">
-        <h2 className="text-3xl font-black tracking-tighter">НАША МИССИЯ</h2>
-        <div className="mt-2 h-1 w-16 bg-accent" />
-        <p className="mt-8 max-w-3xl text-xs font-semibold leading-relaxed tracking-wider text-muted sm:text-sm">
-          МЫ ВЕРИМ, ЧТО МУЗЫКА СПОСОБНА ОБЪЕДИНЯТЬ. НАША ЦЕЛЬ — СОЗДАВАТЬ
-          НЕЗАБЫВАЕМЫЕ ВЕЧЕРА, ГДЕ КАЖДЫЙ НАЙДЁТ СВОЙ РИТМ. ОТ КАМЕРНЫХ
-          КЛУБОВ ДО КРУПНЫХ ФЕСТИВАЛЕЙ — МЫ ПРИНОСИМ ЭНЕРГИЮ ВЕЗДЕ.
-        </p>
+      <div className="mt-24 border-t-2 border-accent/20 pt-16">
+        <span className="text-[10px] font-bold tracking-[0.3em] text-accent">⏣ МАНИФЕСТ</span>
+        <h2 className="mt-4 text-4xl font-black tracking-tighter">
+          ПЕРЕОПРЕДЕЛЕНИЕ ГРАНИЦ<br />
+          <span className="gradient-text">АНДЕГРАУНД СЦЕНЫ</span>
+        </h2>
+        <div className="mt-4 h-1 w-16 bg-accent" />
+        <div className="mt-8 max-w-4xl space-y-4 text-xs font-semibold leading-relaxed tracking-wider text-muted sm:text-sm">
+          <p>
+            МЫ ХОТИМ ИГРАТЬ МУЗЫКУ НЕ ДЛЯ НАРКОМАНОВ И ЛЮДЕЙ ЗА 40.
+            МЫ ХОТИМ ПРИВЛЕЧЬ НОВУЮ АУДИТОРИЮ, ПОКАЗАТЬ, ЧТО АНДЕГРАУНД —
+            ЭТО НЕ СТЕРЕОТИПЫ, А ТВОРЧЕСТВО И КРАСОТА, ИНТЕЛЛЕКТ И УТОНЧЁННОСТЬ.
+          </p>
+          <p>
+            МЫ ПОКАЖЕМ ТУ СТОРОНУ АНДЕГРАУНДА, КОТОРАЯ ЕСТЬ В КАЖДОМ ИЗ НАС.
+            НИКАКОГО РАЗЛОЖЕНИЯ ЛИЧНОСТИ — НАОБОРОТ: САМОРАЗВИТИЕ, УВАЖЕНИЕ И СВОБОДА —
+            ВОТ КАКИМ МЫ ВИДИМ АНДЕГРАУНД И ЭТИМ ХОТИМ ДЕЛИТЬСЯ.
+          </p>
+          <p>
+            МИССИЯ ПОМОЖЕТ НАМ БЫСТРЕЕ ОРИЕНТИРОВАТЬСЯ В ВОПРОСАХ, СВЯЗАННЫХ
+            С КОНТЕНТОМ, А ТАКЖЕ В ЧЁТКОМ ОПРЕДЕЛЕНИИ НАШЕГО МЕСТА В КУЛЬТУРЕ.
+          </p>
+          <p className="pt-2 text-xs tracking-[0.3em] text-accent">
+            АМИНЬ. ВСЕМ АНДЕГРАУНД!
+          </p>
+        </div>
       </div>
     </div>
   );
