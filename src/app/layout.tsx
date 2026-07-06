@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "10/12DJ'S | Команда диджеев",
-  description: "10/12DJ'S — команда профессиональных диджеев. Сеты, мероприятия, музыка.",
+  title: "10/12DJ'S | КОМАНДА ДИДЖЕЕВ",
+  description: "10/12DJ'S — КОМАНДА ПРОФЕССИОНАЛЬНЫХ ДИДЖЕЕВ.",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="h-full">
-      <body className="flex min-h-full flex-col bg-background text-foreground striped-bg">
+      <body className="flex min-h-full flex-col bg-background text-foreground concrete-grid">
         <Header />
         <main className="flex-1 pt-16">{children}</main>
         <Footer />

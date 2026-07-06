@@ -55,17 +55,18 @@ export default async function NewsDetail({ params }: { params: Promise<{ slug: s
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-24">
+    <div className="relative mx-auto max-w-3xl px-4 py-24">
       <Link
         href="/news"
-        className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-muted transition-colors hover:text-accent"
+        className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-muted transition-colors hover:text-accent"
       >
         ← НАЗАД К НОВОСТЯМ
       </Link>
       <article className="mt-8 border-t-2 border-accent/20 pt-8">
-        <time className="text-xs font-semibold tracking-widest text-muted">{item.date}</time>
+        <time className="text-xs font-semibold tracking-[0.2em] text-muted">{item.date}</time>
         <h1 className="mt-4 text-3xl font-black tracking-tighter sm:text-4xl">{item.title}</h1>
-        <div className="mt-8 text-xs font-semibold leading-relaxed tracking-wider text-muted">
+        <div className="mt-2 h-1 w-16 bg-accent" />
+        <div className="mt-8 text-xs font-semibold leading-relaxed tracking-wider text-muted sm:text-sm">
           <p>{item.content}</p>
         </div>
       </article>

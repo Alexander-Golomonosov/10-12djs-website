@@ -40,11 +40,13 @@ const allNews = [
 
 export default function News() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-24">
+    <div className="relative mx-auto max-w-6xl px-4 py-24">
+      <span className="graffiti-tag -top-16 -left-10 rotate-[-10deg]">LATEST</span>
       <h1 className="text-5xl font-black tracking-tighter sm:text-6xl">
         <span className="gradient-text">НОВОСТИ</span>
       </h1>
-      <p className="mt-4 text-xs font-semibold tracking-widest text-muted">ПОСЛЕДНИЕ СОБЫТИЯ</p>
+      <div className="mt-2 h-1 w-16 bg-accent" />
+      <p className="mt-4 text-xs font-semibold tracking-[0.2em] text-muted">ПОСЛЕДНИЕ СОБЫТИЯ</p>
       <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
         {allNews.map((item) => (
           <NewsCard key={item.slug} {...item} />
