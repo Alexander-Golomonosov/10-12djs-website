@@ -19,6 +19,12 @@ const artists = [
     photo: "/artists/xoniad.jpg",
   },
   {
+    nick: "DJ CAIMAN",
+    role: "ДИДЖЕЙ, DRUM&BASS / TECHNO / HOUSE",
+    bio: "ДРАМ-Н-БЕЙС, ТЕХНО И ХАУС В ОДНОМ СЕТЕ. МАСТЕР ЖАНРОВЫХ ПЕРЕХОДОВ.",
+    photo: "/artists/caiman.jpg",
+  },
+  {
     nick: "SHAWTY",
     role: "ДИДЖЕЙ, TEK-HOUSE / DRUM&BASS",
     bio: "ИГРАЕТ ТЕК-ХАУС И ДРАМ-Н-БЕЙС. ДРАЙВ И ЭНЕРГИЯ КАЖДЫЙ СЕТ.",
