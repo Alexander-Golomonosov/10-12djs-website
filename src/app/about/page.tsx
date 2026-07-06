@@ -8,9 +8,21 @@ export const metadata: Metadata = {
 const artists = [
   {
     nick: "FCKNGD1",
-    role: "ОСНОВАТЕЛЬ, TECH HOUSE / TECHNO",
-    bio: "ЗА ПУЛЬТОМ С 2015. СОЗДАТЕЛЬ 10/12DJ'S. ЕГО СЕТЫ — ЭТО ТЁМНАЯ ЭНЕРГИЯ И ДРАЙВ, ОТ КОТОРЫХ ТАНЦПОЛ ВЗРЫВАЕТСЯ.",
+    role: "ОСНОВАТЕЛЬ, МУЛЬТИЖАНР",
+    bio: "DRUM&BASS, JUNGLE, TECHNO, BREAKS, ELECTROPUNK И НЕ ТОЛЬКО. ЗА ПУЛЬТОМ С 2015. ОСНОВАТЕЛЬ 10/12DJ'S.",
     photo: "/artists/fckngd1.jpg",
+  },
+  {
+    nick: "XONIAD",
+    role: "МУЛЬТИЖАНР",
+    bio: "ОТ ТЕХНО ДО ДЖАНГЛА. МАСТЕР ПЕРЕХОДОВ И АТМОСФЕРНЫХ СЕТОВ.",
+    photo: "/artists/xoniad.jpg",
+  },
+  {
+    nick: "DAN1",
+    role: "МУЗЫКАЛЬНЫЙ ПРОДЮСЕР, ЭМБИЕНТ",
+    bio: "СОЗДАЁТ АТМОСФЕРНЫЕ ЭМБИЕНТ-КОМПОЗИЦИИ. ЕДИНСТВЕННЫЙ НЕ ДИДЖЕЙ В КОМАНДЕ, НО ВАЖНЕЙШАЯ ЧАСТЬ ЗВУЧАНИЯ.",
+    photo: "/artists/dan1.jpg",
   },
 ];
 
