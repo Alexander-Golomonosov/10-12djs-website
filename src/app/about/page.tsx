@@ -19,6 +19,12 @@ const artists = [
     photo: "/artists/xoniad.jpg",
   },
   {
+    nick: "MRFLESH",
+    role: "ДИДЖЕЙ, HOUSE / TECHNO / DUB",
+    bio: "ХАУС, ТЕХНО И ДАБ — ГЛУБОКИЙ ЗВУК ДЛЯ ЦЕНИТЕЛЕЙ.",
+    photo: "/artists/mrflesh.jpg",
+  },
+  {
     nick: "MENYAI",
     role: "ДИДЖЕЙ, МУЛЬТИЖАНР",
     bio: "ИГРАЕТ ВСЁ — ОТ ТЕХНО ДО ДЖАНГЛА. УНИВЕРСАЛЬНЫЙ БОЕЦ ТАНЦПОЛА.",
