@@ -23,18 +23,6 @@ body {
   letter-spacing: 0.04em;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
 .gradient-text {
   background: linear-gradient(135deg, #ff4242, #ff6666);
   -webkit-background-clip: text;
@@ -79,77 +67,11 @@ body::before {
   background-size: 60px 60px;
 }
 
-@keyframes logo-glow {
-  0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 66, 66, 0.3)) drop-shadow(0 0 60px rgba(255, 66, 66, 0.1)); }
-  50% { filter: drop-shadow(0 0 30px rgba(255, 66, 66, 0.5)) drop-shadow(0 0 80px rgba(255, 66, 66, 0.2)); }
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
 }
 
-@keyframes glitch {
-  0%, 90%, 100% { transform: translate(0); opacity: 1; }
-  92% { transform: translate(-2px, 1px); opacity: 0.8; }
-  94% { transform: translate(2px, -1px); opacity: 0.9; }
-  96% { transform: translate(-1px, -2px); opacity: 0.7; }
-  98% { transform: translate(1px, 2px); opacity: 0.85; }
-}
-
-@keyframes glitch-slice {
-  0%, 85%, 100% { clip-path: inset(0); transform: translate(0); }
-  86% { clip-path: inset(20% 0 60% 0); transform: translate(3px); }
-  88% { clip-path: inset(50% 0 30% 0); transform: translate(-3px); }
-  90% { clip-path: inset(10% 0 70% 0); transform: translate(2px); }
-  92% { clip-path: inset(60% 0 20% 0); transform: translate(-2px); }
-}
-
-.logo-glitch {
-  animation: logo-glow 3s ease-in-out infinite;
-  position: relative;
-}
-
-.logo-glitch::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  opacity: 0;
-  animation: glitch 4s infinite;
-}
-
-.logo-glitch-hero {
-  animation: logo-glow 2s ease-in-out infinite, glitch-slice 5s infinite;
-}
-
-@keyframes text-glitch-anim {
-  0%, 85%, 100% { clip-path: inset(0); transform: translate(0); }
-  86% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 2px); }
-  88% { clip-path: inset(50% 0 30% 0); transform: translate(3px, -1px); }
-  90% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 1px); }
-  92% { clip-path: inset(60% 0 20% 0); transform: translate(2px, -2px); }
-}
-
-.text-glitch {
-  position: relative;
-  display: inline-block;
-}
-
-.text-glitch::before,
-.text-glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.text-glitch::before {
-  color: #ff4242;
-  z-index: -1;
-  animation: glitch 3.5s infinite;
-}
-
-.text-glitch::after {
-  color: #22d3ee;
-  z-index: -2;
-  animation: glitch 3.5s infinite 0.15s;
+.logo-pulse {
+  animation: pulse-glow 4s ease-in-out infinite;
 }

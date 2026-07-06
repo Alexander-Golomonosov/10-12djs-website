@@ -38,9 +38,9 @@ export default function Home() {
         </div>
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-8 flex justify-center">
-            <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-accent/40 logo-glitch-hero">
+            <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-accent/40 logo-pulse">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="10/12DJ'S"
                 width={120}
                 height={120}
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
           </div>
           <h1 className="text-6xl font-black tracking-tighter sm:text-8xl">
-            <span className="gradient-text text-glitch" data-text="10/12DJ'S">10/12DJ&apos;S</span>
+            <span className="gradient-text">10/12DJ&apos;S</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xs font-semibold tracking-[0.2em] text-muted sm:text-sm">
             10/12DJ&apos;S — КОМАНДА ПРОФЕССИОНАЛЬНЫХ ДИДЖЕЕВ.<br />
