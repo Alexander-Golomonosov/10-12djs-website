@@ -24,10 +24,10 @@ export default function Contact() {
             <h3 className="text-sm font-bold tracking-wider">СВЯЗЬ</h3>
             <div className="mt-2 h-px w-12 bg-accent" />
             <a
-              href="mailto:hello@1012djs.com"
+              href="mailto:10djs12_fckngd1@vk.com"
               className="mt-4 inline-block text-xs font-semibold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
             >
-              HELLO@1012DJS.COM
+              10DJS12_FCKNGD1@VK.COM
             </a>
           </div>
           <div>
