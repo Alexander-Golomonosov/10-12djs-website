@@ -19,6 +19,12 @@ const artists = [
     photo: "/artists/xoniad.jpg",
   },
   {
+    nick: "TEMP4D",
+    role: "ДИДЖЕЙ, DRUM&BASS / HIP-HOP",
+    bio: "ВО ВСЕХ ПОДЖАНРАХ ДРАМ-Н-БЕЙСА И ХИП-ХОПА. МАСТЕР ТЯЖЁЛЫХ БИТОВ И ХАРИЗМА.",
+    photo: "/artists/temp4d.jpg",
+  },
+  {
     nick: "MRFLESH",
     role: "ДИДЖЕЙ, HOUSE / TECHNO / DUB",
     bio: "ХАУС, ТЕХНО И ДАБ — ГЛУБОКИЙ ЗВУК ДЛЯ ЦЕНИТЕЛЕЙ.",
