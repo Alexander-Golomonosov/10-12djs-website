@@ -27,14 +27,24 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <span className="graffiti-tag -top-10 -left-20 rotate-[-15deg]">10/12</span>
-        <span className="graffiti-tag bottom-20 -right-40 rotate-[20deg]">DJ</span>
-        <span className="graffiti-tag-light top-1/3 left-1/2 -translate-x-1/2 rotate-[-8deg]">DJS</span>
-        <span className="graffiti-tag bottom-40 -left-10 rotate-[25deg] opacity-[0.02]">CREW</span>
-        <span className="graffiti-tag-light top-10 right-10 rotate-[-5deg] opacity-[0.01]">UNDERGROUND</span>
+        <div className="drip drip-1" />
+        <div className="drip drip-2" />
+        <div className="drip drip-3" />
+        <div className="drip drip-4" />
+        <div className="drip drip-5" />
+        <div className="drip drip-6" />
+        <div className="drip drip-7" />
+        <div className="splatter splatter-1" />
+        <div className="splatter splatter-2" />
+        <div className="splatter splatter-3" />
+        <div className="splatter splatter-4" />
+        <span className="graffiti-tag-solid top-10 -left-10 rotate-[-12deg]">10/12</span>
+        <span className="graffiti-tag-solid bottom-10 -right-20 rotate-[15deg]">DJS</span>
+        <span className="graffiti-tag top-1/4 right-0 rotate-[30deg] opacity-[0.03]">SOUND</span>
+        <span className="graffiti-tag-light bottom-1/3 left-0 rotate-[-20deg] opacity-[0.02]">BASS</span>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ff4242_0%,_transparent_60%)] opacity-15" />
-        <div className="absolute top-1/4 left-4 h-32 w-1 bg-accent/30 rotate-[30deg]" />
-        <div className="absolute bottom-1/4 right-8 h-48 w-1 bg-accent/20 rotate-[-20deg]" />
+        <div className="absolute top-1/4 left-4 h-32 w-0.5 bg-accent/30 rotate-[30deg]" />
+        <div className="absolute bottom-1/4 right-8 h-48 w-0.5 bg-accent/20 rotate-[-20deg]" />
         <div className="absolute top-1/3 right-1/4 border-2 border-accent/10 px-6 py-2 rotate-12">
           <span className="text-[8px] font-bold tracking-[0.3em] text-accent/30">UNDERGROUND</span>
         </div>
@@ -82,6 +92,9 @@ export default function Home() {
 
       <section className="relative mx-auto max-w-6xl px-4 py-32">
         <span className="graffiti-tag-light -top-20 -right-10 rotate-[10deg]">SOUND</span>
+        <span className="graffiti-tag bottom-10 -left-16 rotate-[-10deg] opacity-[0.02]">BEATS</span>
+        <div className="drip drip-6" />
+        <div className="splatter splatter-3" />
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
             <h2 className="text-4xl font-black tracking-tighter">КТО МЫ</h2>

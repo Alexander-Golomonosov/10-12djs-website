@@ -23,15 +23,23 @@ body {
   letter-spacing: 0.04em;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
 .gradient-text {
   background: linear-gradient(135deg, #ff4242, #ff6666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.glow-red {
-  box-shadow: 0 0 60px color-mix(in srgb, #ff4242 15%, transparent);
 }
 
 .graffiti-tag {
@@ -60,6 +68,20 @@ body {
   line-height: 1;
 }
 
+.graffiti-tag-solid {
+  position: absolute;
+  font-family: 'Tektur', sans-serif;
+  font-weight: 900;
+  font-size: clamp(5rem, 15vw, 15rem);
+  color: rgba(255, 66, 66, 0.03);
+  letter-spacing: -0.08em;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  -webkit-text-stroke: 2px rgba(255, 66, 66, 0.05);
+}
+
 .concrete-grid {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -75,3 +97,28 @@ body {
 .logo-pulse {
   animation: pulse-glow 4s ease-in-out infinite;
 }
+
+.drip {
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(255, 66, 66, 0.3), rgba(255, 66, 66, 0));
+}
+
+.drip-1 { height: 80px; left: 15%; top: 0; }
+.drip-2 { height: 120px; left: 45%; top: 0; opacity: 0.5; }
+.drip-3 { height: 60px; right: 25%; top: 0; }
+.drip-4 { height: 90px; right: 60%; top: 30%; opacity: 0.4; }
+.drip-5 { height: 150px; left: 70%; bottom: 0; opacity: 0.3; }
+.drip-6 { height: 70px; left: 5%; top: 20%; opacity: 0.3; }
+.drip-7 { height: 100px; right: 10%; bottom: 10%; opacity: 0.2; }
+
+.splatter {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.splatter-1 { width: 80px; height: 80px; background: radial-gradient(circle, rgba(255,66,66,0.08) 0%, transparent 70%); top: 10%; left: 5%; }
+.splatter-2 { width: 120px; height: 120px; background: radial-gradient(circle, rgba(255,66,66,0.05) 0%, transparent 70%); bottom: 15%; right: 8%; }
+.splatter-3 { width: 50px; height: 50px; background: radial-gradient(circle, rgba(255,66,66,0.06) 0%, transparent 70%); top: 40%; right: 20%; }
+.splatter-4 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,66,66,0.03) 0%, transparent 60%); bottom: 5%; left: -5%; }
