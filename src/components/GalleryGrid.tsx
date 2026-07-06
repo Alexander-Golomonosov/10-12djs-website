@@ -1,27 +1,32 @@
+import Image from "next/image";
+
 const images = [
-  { id: 1, label: "КЛУБНАЯ НОЧЬ" },
-  { id: 2, label: "ФЕСТИВАЛЬ" },
-  { id: 3, label: "СТУДИЯ" },
-  { id: 4, label: "OPEN AIR" },
-  { id: 5, label: "BACKSTAGE" },
-  { id: 6, label: "ВЕЧЕРИНКА" },
+  { file: "DSCN2724.JPG" },
+  { file: "DSCN2725.JPG" },
+  { file: "DSCN2726.JPG" },
+  { file: "DSCN2727.JPG" },
+  { file: "DSCN2728.JPG" },
+  { file: "DSCN2739.JPG" },
+  { file: "DSCN2740.JPG" },
+  { file: "DSCN2741.JPG" },
+  { file: "DSCN2742.JPG" },
+  { file: "DSCN2743.JPG" },
+  { file: "DSCN2744.JPG" },
+  { file: "DSCN2745.JPG" },
 ];
 
 export default function GalleryGrid() {
   return (
     <div className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
       {images.map((img) => (
-        <div
-          key={img.id}
-          className="group relative overflow-hidden border-2 border-border/20 bg-card"
-        >
-          <div className="aspect-square bg-gradient-to-br from-accent/5 to-accent/20" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl font-black text-foreground/5">♪</span>
-          </div>
-          <div className="absolute inset-x-0 bottom-0 border-t-2 border-accent/30 bg-background/90 p-4">
-            <span className="text-xs font-bold tracking-widest">{img.label}</span>
-          </div>
+        <div key={img.file} className="group relative overflow-hidden border border-border/20 bg-card">
+          <Image
+            src={`/gallery/${img.file}`}
+            alt="10/12DJ'S"
+            width={600}
+            height={450}
+            className="h-full w-full object-cover transition-opacity group-hover:opacity-80"
+          />
         </div>
       ))}
     </div>
