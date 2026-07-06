@@ -19,6 +19,12 @@ const artists = [
     photo: "/artists/xoniad.jpg",
   },
   {
+    nick: "MENYAI",
+    role: "ДИДЖЕЙ, МУЛЬТИЖАНР",
+    bio: "ИГРАЕТ ВСЁ — ОТ ТЕХНО ДО ДЖАНГЛА. УНИВЕРСАЛЬНЫЙ БОЕЦ ТАНЦПОЛА.",
+    photo: "/artists/menyai.jpg",
+  },
+  {
     nick: "DJ CAIMAN",
     role: "ДИДЖЕЙ, DRUM&BASS / TECHNO / HOUSE",
     bio: "ДРАМ-Н-БЕЙС, ТЕХНО И ХАУС В ОДНОМ СЕТЕ. МАСТЕР ЖАНРОВЫХ ПЕРЕХОДОВ.",
