@@ -38,6 +38,7 @@ export default function Contact() {
                 { name: "TELEGRAM", url: "https://t.me/I0_12_djs" },
                 { name: "VK", url: "https://vk.com/10djs12" },
                 { name: "YOUTUBE", url: "https://www.youtube.com/@1012djs" },
+                { name: "INSTAGRAM", url: "https://instagram.com/1012djs" },
               ].map((s) => (
                 <a
                   key={s.name}
@@ -50,6 +51,9 @@ export default function Contact() {
                 </a>
               ))}
             </div>
+            <p className="mt-3 text-[9px] font-semibold tracking-[0.15em] text-muted/40">
+              * INSTAGRAM — ПРОДУКТ META, ЗАПРЕЩЁННЫЙ НА ТЕРРИТОРИИ РФ
+            </p>
           </div>
           <div>
             <h3 className="text-sm font-bold tracking-wider">ВЫСТУПЛЕНИЯ</h3>

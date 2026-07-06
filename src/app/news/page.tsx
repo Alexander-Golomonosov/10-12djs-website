@@ -7,34 +7,22 @@ export const metadata: Metadata = {
 
 const allNews = [
   {
-    title: "ЛЕТНИЙ ФЕСТИВАЛЬ 2026",
-    excerpt: "10/12DJ'S ВЫСТУПЯТ НА ГЛАВНОЙ СЦЕНЕ ЛЕТНЕГО ФЕСТИВАЛЯ.",
-    date: "15 ИЮНЯ 2026",
-    slug: "summer-festival-2026",
+    title: "ЛЮПУС-ФЕСТ 2026",
+    excerpt: "СКОРО ВЫСТУПИМ НА ЛЕТНЕМ ФЕСТИВАЛЕ ЛЮПУС-ФЕСТ В ЛЕН. ОБЛАСТИ.",
+    date: "ИЮЛЬ 2026",
+    slug: "lupus-fest",
   },
   {
-    title: "НОВЫЙ МИКС В ЭФИРЕ",
-    excerpt: "СВЕЖИЙ ЧАСОВОЙ МИКС ОТ НАШЕГО РЕЗИДЕНТА НА SOUNDCLOUD.",
-    date: "1 ИЮНЯ 2026",
-    slug: "new-mix",
+    title: "DJ ENDE В DIZENGOF/99",
+    excerpt: "10 ИЮЛЯ DJ ENDE ВЫСТУПАЕТ В РЕСТОРАНЕ ИЗРАИЛЬСКОЙ КУХНИ DIZENGOF/99, СПБ, БАСКОВ ПЕРЕУЛОК 31.",
+    date: "10 ИЮЛЯ 2026",
+    slug: "dj-ende-dizengof",
   },
   {
-    title: "КЛУБНЫЙ ТУР ПО ГОРОДАМ",
-    excerpt: "ОТПРАВЛЯЕМСЯ В ТУР ПО 5 ГОРОДАМ. СЛЕДИТЕ ЗА РАСПИСАНИЕМ.",
-    date: "20 МАЯ 2026",
-    slug: "club-tour",
-  },
-  {
-    title: "КОЛЛАБОРАЦИЯ С НОВЫМ ЛЕЙБЛОМ",
-    excerpt: "СОТРУДНИЧЕСТВО С НЕЗАВИСИМЫМ ЛЕЙБЛОМ BASSPORT RECORDS.",
-    date: "10 МАЯ 2026",
-    slug: "label-collab",
-  },
-  {
-    title: "РЕМИКС НА NIGHT DRIVE",
-    excerpt: "РЕМИКС ВЫШЕЛ НА ВСЕХ ПЛОЩАДКАХ.",
-    date: "25 АПРЕЛЯ 2026",
-    slug: "night-drive-remix",
+    title: "РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ",
+    excerpt: "1 АВГУСТА — РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ.",
+    date: "1 АВГУСТА 2026",
+    slug: "ptichya-lichnost",
   },
 ];
 
