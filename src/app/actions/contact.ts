@@ -1,6 +1,8 @@
 "use server";
 
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function submitContact(prev: { success: boolean; message: string }, formData: FormData) {
   const name = formData.get("name")?.toString().trim();
@@ -16,18 +18,8 @@ export async function submitContact(prev: { success: boolean; message: string },
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: process.env.SMTP_SECURE === "true",
-      auth: {
-        user: process.env.SMTP_USER || "",
-        pass: process.env.SMTP_PASS || "",
-      },
-    } as nodemailer.TransportOptions);
-
-    await transporter.sendMail({
-      from: process.env.SMTP_FROM || `"${name}" <noreply@10-12djs-website.vercel.app>`,
+    await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
       to: "10djs12_fckngd1@vk.com",
       replyTo: email,
       subject: `Новое сообщение с сайта от ${name}`,
