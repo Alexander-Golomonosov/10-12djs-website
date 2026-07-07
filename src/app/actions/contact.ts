@@ -1,8 +1,16 @@
 "use server";
 
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER || "",
+    pass: process.env.SMTP_PASS || "",
+  },
+});
 
 export async function submitContact(prev: { success: boolean; message: string }, formData: FormData) {
   const name = formData.get("name")?.toString().trim();
@@ -18,8 +26,8 @@ export async function submitContact(prev: { success: boolean; message: string },
   }
 
   try {
-    await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+    await transporter.sendMail({
+      from: `"${name}" <golomonosov@gmail.com>`,
       to: "10djs12_fckngd1@vk.com",
       replyTo: email,
       subject: `Новое сообщение с сайта от ${name}`,
@@ -28,7 +36,8 @@ export async function submitContact(prev: { success: boolean; message: string },
     });
 
     return { success: true, message: "Сообщение отправлено! Мы свяжемся с вами." };
-  } catch {
+  } catch (e) {
+    console.error("Contact form error:", e);
     return { success: false, message: "Ошибка отправки. Попробуйте позже." };
   }
 }
