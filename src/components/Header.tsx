@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/news", label: "Новости" },
   { href: "/gallery", label: "Галерея" },
   { href: "/portfolio", label: "Портфолио" },
+  { href: "/quiz", label: "Тест" },
   { href: "/school", label: "Школа" },
   { href: "/contact", label: "Контакты" },
 ];
