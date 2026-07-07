@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NewsCard from "@/components/NewsCard";
-import { fetchLatestPost } from "@/lib/telegram";
+import { fetchPosts } from "@/lib/telegram";
 
 export const metadata: Metadata = {
   title: "НОВОСТИ | 10/12DJ'S",
@@ -31,10 +31,11 @@ const allNews = [
 
 export default async function News() {
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  let telegramPost = null;
+  let telegramPost: Awaited<ReturnType<typeof fetchPosts>>[number] | null = null;
 
   if (token) {
-    telegramPost = await fetchLatestPost(token, "@I0_12_djs");
+    const posts = await fetchPosts(token, "@I0_12_djs", 1);
+    telegramPost = posts[0] ?? null;
   }
 
   return (
@@ -45,26 +46,23 @@ export default async function News() {
       </h1>
       <div className="mt-2 h-1 w-16 bg-accent" />
       <p className="mt-4 text-xs font-semibold tracking-[0.2em] text-muted">ПОСЛЕДНИЕ СОБЫТИЯ</p>
-      <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
-        {telegramPost && (
-          <div className="col-span-full mb-6 border-2 border-accent/40 bg-accent/5 p-6">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold tracking-[0.3em] text-accent">TELEGRAM</span>
-              <span className="text-[10px] font-semibold tracking-[0.2em] text-muted">{telegramPost.date}</span>
-            </div>
-            <p className="mt-3 text-sm font-semibold leading-relaxed tracking-wider text-foreground">
-              {telegramPost.text.split("\n").slice(1).join("\n").trim() || telegramPost.text}
-            </p>
-            <a
-              href={`https://t.me/I0_12_djs/${telegramPost.messageId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-[10px] font-bold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
-            >
-              ОТКРЫТЬ В TELEGRAM →
-            </a>
+
+      {telegramPost && (
+        <a
+          href={`https://t.me/I0_12_djs/${telegramPost.messageId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 flex items-center justify-between border-2 border-accent/30 bg-accent/5 p-5 transition-all hover:border-accent"
+        >
+          <div>
+            <span className="text-[10px] font-bold tracking-[0.3em] text-accent">📢 ПОСЛЕДНИЙ ПОСТ В TELEGRAM</span>
+            <p className="mt-2 text-xs font-semibold tracking-wider text-foreground">{telegramPost.title}</p>
           </div>
-        )}
+          <span className="text-[10px] font-bold tracking-[0.2em] text-accent">ОТКРЫТЬ →</span>
+        </a>
+      )}
+
+      <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
         {allNews.map((item) => (
           <NewsCard key={item.slug} {...item} />
         ))}

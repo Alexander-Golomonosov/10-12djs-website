@@ -1,4 +1,4 @@
-import { fetchLatestPost } from "@/lib/telegram";
+import { fetchPosts } from "@/lib/telegram";
 
 export const dynamic = "force-dynamic";
 
@@ -9,11 +9,7 @@ export async function GET() {
     return Response.json({ error: "TELEGRAM_BOT_TOKEN not set" }, { status: 500 });
   }
 
-  const post = await fetchLatestPost(token, "@I0_12_djs");
+  const posts = await fetchPosts(token, "@I0_12_djs", 10);
 
-  if (!post) {
-    return Response.json({ error: "No posts found" }, { status: 404 });
-  }
-
-  return Response.json(post);
+  return Response.json(posts);
 }
