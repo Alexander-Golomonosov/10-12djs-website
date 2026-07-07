@@ -181,17 +181,6 @@ export default function RaveQuiz() {
     setAnswers([]);
   }
 
-  function handleShare(data: { title: string }) {
-    const url = "https://10-12djs-website.vercel.app/quiz";
-    const text = `Я ПРОШЁЛ РЕЙВ-ТЕСТ ОТ 10/12DJ'S И ПОЛУЧИЛ: ${data.title}! ПРОЙДИ ЕГО ТЫ: ${url}`;
-
-    if (navigator.share) {
-      navigator.share({ title: "РЕЙВ-ТЕСТ 10/12DJ'S", text, url });
-    } else {
-      navigator.clipboard.writeText(text);
-    }
-  }
-
   if (step === "result") {
     const count: Record<Archetype, number> = { A: 0, B: 0, C: 0, D: 0 };
     for (const a of answers) count[a]++;
@@ -218,12 +207,6 @@ export default function RaveQuiz() {
             ПОДЕЛИТЬСЯ РЕЗУЛЬТАТОМ
           </span>
           <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              onClick={() => handleShare(data)}
-              className="border border-border/40 px-5 py-3 text-[10px] font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
-            >
-              📤 ПОДЕЛИТЬСЯ
-            </button>
             <a
               href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
               target="_blank"
