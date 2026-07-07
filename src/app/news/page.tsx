@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NewsCard from "@/components/NewsCard";
-import { fetchPosts } from "@/lib/telegram";
+import { fetchLatestPost } from "@/lib/telegram";
 
 export const metadata: Metadata = {
   title: "НОВОСТИ | 10/12DJ'S",
@@ -31,11 +31,10 @@ const allNews = [
 
 export default async function News() {
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  let telegramPost: Awaited<ReturnType<typeof fetchPosts>>[number] | null = null;
+  let telegramPost: Awaited<ReturnType<typeof fetchLatestPost>> | null = null;
 
   if (token) {
-    const posts = await fetchPosts(token, "@I0_12_djs", 1);
-    telegramPost = posts[0] ?? null;
+    telegramPost = await fetchLatestPost(token, "@I0_12_djs");
   }
 
   return (
