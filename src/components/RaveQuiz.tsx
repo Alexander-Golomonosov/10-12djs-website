@@ -181,11 +181,24 @@ export default function RaveQuiz() {
     setAnswers([]);
   }
 
+  function handleShare(data: { title: string }) {
+    const url = "https://10-12djs-website.vercel.app/quiz";
+    const text = `Я ПРОШЁЛ РЕЙВ-ТЕСТ ОТ 10/12DJ'S И ПОЛУЧИЛ: ${data.title}! ПРОЙДИ ЕГО ТЫ: ${url}`;
+
+    if (navigator.share) {
+      navigator.share({ title: "РЕЙВ-ТЕСТ 10/12DJ'S", text, url });
+    } else {
+      navigator.clipboard.writeText(text);
+    }
+  }
+
   if (step === "result") {
     const count: Record<Archetype, number> = { A: 0, B: 0, C: 0, D: 0 };
     for (const a of answers) count[a]++;
     const result = getResult(count);
     const data = resultsData[result];
+    const shareUrl = "https://10-12djs-website.vercel.app/quiz";
+    const shareText = `Я ПРОШЁЛ РЕЙВ-ТЕСТ ОТ 10/12DJ'S И ПОЛУЧИЛ: ${data.title}! ПРОЙДИ ЕГО ТЫ: ${shareUrl}`;
 
     return (
       <div className="mx-auto w-full max-w-2xl border-2 border-accent/20 bg-card p-8 sm:p-12">
@@ -199,6 +212,44 @@ export default function RaveQuiz() {
         <p className="mt-6 text-xs font-semibold leading-relaxed tracking-wider text-muted/80 sm:text-sm">
           {data.description}
         </p>
+        <div className="mt-8 h-px w-full bg-border/30" />
+        <div className="mt-8">
+          <span className="text-[10px] font-bold tracking-[0.3em] text-muted/60">
+            ПОДЕЛИТЬСЯ РЕЗУЛЬТАТОМ
+          </span>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <button
+              onClick={() => handleShare(data)}
+              className="border border-border/40 px-5 py-3 text-[10px] font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
+            >
+              📤 ПОДЕЛИТЬСЯ
+            </button>
+            <a
+              href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border/40 px-5 py-3 text-[10px] font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
+            >
+              TELEGRAM
+            </a>
+            <a
+              href={`https://wa.me/?text=${encodeURIComponent(shareText)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border/40 px-5 py-3 text-[10px] font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
+            >
+              WHATSAPP
+            </a>
+            <a
+              href={`https://vk.com/share.php?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent("РЕЙВ-ТЕСТ 10/12DJ'S")}&description=${encodeURIComponent(shareText)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border/40 px-5 py-3 text-[10px] font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
+            >
+              VK
+            </a>
+          </div>
+        </div>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <button
             onClick={handleReset}
