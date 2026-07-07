@@ -14,7 +14,19 @@ export async function submitContact(prev: { success: boolean; message: string },
   }
 
   try {
-    console.log("Contact form submission:", { name, email, message });
+    const res = await fetch("https://formsubmit.co/ajax/10djs12_fckngd1@vk.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+        _subject: `Новое сообщение с сайта от ${name}`,
+      }),
+    });
+
+    if (!res.ok) throw new Error("FormSubmit error");
+
     return { success: true, message: "Сообщение отправлено! Мы свяжемся с вами." };
   } catch {
     return { success: false, message: "Ошибка отправки. Попробуйте позже." };
