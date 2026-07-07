@@ -163,6 +163,7 @@ export default function RaveQuiz() {
   const [step, setStep] = useState<"quiz" | "result">("quiz");
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Archetype[]>([]);
+  const [copied, setCopied] = useState(false);
 
   function handleAnswer(type: Archetype) {
     const next = [...answers, type];
@@ -207,6 +208,16 @@ export default function RaveQuiz() {
             ПОДЕЛИТЬСЯ РЕЗУЛЬТАТОМ
           </span>
           <div className="mt-4 flex flex-wrap gap-3">
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(shareText);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }}
+              className="border border-border/40 px-5 py-3 text-[10px] font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
+            >
+              {copied ? "СКОПИРОВАНО" : "📋 КОПИРОВАТЬ"}
+            </button>
             <a
               href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
               target="_blank"
