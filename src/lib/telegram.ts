@@ -10,7 +10,7 @@ export type TelegramPost = {
 
 export async function fetchLatestPost(token: string, channelUsername: string): Promise<TelegramPost | null> {
   const res = await fetch(
-    `https://api.telegram.org/bot${token}/getUpdates?timeout=5`,
+    `https://api.telegram.org/bot${token}/getUpdates?offset=-1&timeout=5`,
     { cache: "no-store" }
   );
 
