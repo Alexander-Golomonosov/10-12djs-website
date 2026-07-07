@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://1012djs.ru"),
   title: "10/12DJ'S | КОМАНДА ДИДЖЕЕВ",
   description: "10/12DJ'S — КОМАНДА ПРОФЕССИОНАЛЬНЫХ ДИДЖЕЕВ.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

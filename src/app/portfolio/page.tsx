@@ -17,7 +17,7 @@ const venues = {
     "DIZENGOF/99",
     "DO IMMIGRATION",
     "TSUNAMI",
-    "PEREVLET (КОВОРКИНГ & ЛАУНДЖ)",
+    "PEREPLET (КОВОРКИНГ & ЛАУНДЖ)",
     "БАР РАЗБИТЫХ СЕРДЕЦ",
     "ОБОРМОТЫ",
     "СТИРКА",
@@ -98,17 +98,40 @@ export default function Portfolio() {
         <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● МЕДИА</span>
         <h2 className="mt-2 text-3xl font-black tracking-tighter">ВИДЕО</h2>
         <div className="mt-2 h-1 w-16 bg-accent" />
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="aspect-video border-2 border-border/20 bg-card flex items-center justify-center"
-            >
-              <span className="text-[10px] font-bold tracking-[0.2em] text-muted/40">
-                ВИДЕО {i}
-              </span>
-            </div>
-          ))}
+        <div className="mt-8">
+          <div className="aspect-video w-full border-2 border-border/20 bg-card">
+            <iframe
+              src="https://disk.yandex.ru/d/vtqID1GtqNK0gw?embed=1"
+              className="h-full w-full"
+              allowFullScreen
+            />
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://disk.yandex.ru/d/vtqID1GtqNK0gw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-accent/30 px-6 py-3 text-[10px] font-bold tracking-[0.2em] text-accent transition-colors hover:bg-accent/10"
+          >
+            ЯНДЕКС ДИСК →
+          </a>
+          <a
+            href="https://vkvideo.ru/@10djs12"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-accent/30 px-6 py-3 text-[10px] font-bold tracking-[0.2em] text-accent transition-colors hover:bg-accent/10"
+          >
+            VK ВИДЕО →
+          </a>
+          <a
+            href="https://soundcloud.com/10-12djs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-accent/30 px-6 py-3 text-[10px] font-bold tracking-[0.2em] text-accent transition-colors hover:bg-accent/10"
+          >
+            SOUNDCLOUD →
+          </a>
         </div>
       </div>
 

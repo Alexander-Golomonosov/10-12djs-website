@@ -139,7 +139,6 @@ export default function About() {
         <div className="mt-4 h-1 w-16 bg-accent" />
         <div className="mt-8 max-w-4xl space-y-4 text-xs font-semibold leading-relaxed tracking-wider text-muted/80 sm:text-sm">
           <p>
-            МЫ ХОТИМ ИГРАТЬ МУЗЫКУ НЕ ДЛЯ НАРКОМАНОВ.
             МЫ ХОТИМ ПРИВЛЕЧЬ НОВУЮ АУДИТОРИЮ, ПОКАЗАТЬ, ЧТО АНДЕГРАУНД —
             ЭТО НЕ СТЕРЕОТИПЫ, А ТВОРЧЕСТВО И КРАСОТА, ИНТЕЛЛЕКТ И УТОНЧЁННОСТЬ.
           </p>

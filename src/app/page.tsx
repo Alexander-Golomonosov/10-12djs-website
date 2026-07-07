@@ -50,7 +50,7 @@ export default function Home() {
         <span className="graffiti-tag" style={{ bottom: '40%', right: '15%', rotate: '8deg', animationDelay: '-7s', fontSize: 'clamp(6rem, 18vw, 18rem)', color: 'rgba(255,66,66,0.02)' }}>BEAT</span>
 
         <div className="absolute top-1/3 right-8 border-2 border-accent/15 px-5 py-2 rotate-12">
-          <span className="text-[8px] font-bold tracking-[0.3em] text-accent/40">EST. 2026</span>
+          <span className="text-[8px] font-bold tracking-[0.3em] text-accent/40">EST. 2025</span>
         </div>
         <div className="absolute bottom-1/4 left-6 h-40 w-0.5 bg-gradient-to-b from-accent/40 to-transparent rotate-[20deg]" />
         <div className="absolute top-1/4 right-4 h-56 w-0.5 bg-gradient-to-b from-accent/20 to-transparent rotate-[-15deg]" />
@@ -110,9 +110,9 @@ export default function Home() {
             <h2 className="mt-4 text-5xl font-black tracking-tighter leading-none">КТО МЫ</h2>
             <div className="mt-4 h-1 w-24 bg-accent" />
             <p className="mt-10 text-xs font-semibold leading-relaxed tracking-wider text-muted/80 sm:text-sm">
-              МЫ — КОМАНДА ДИДЖЕЕВ, ОБЪЕДИНЁННЫХ ЛЮБОВЬЮ К КАЧЕСТВЕННОЙ МУЗЫКЕ.
-              КАЖДЫЙ НАШ СЕТ — ЭТО ПУТЕШЕСТВИЕ. ИГРАЕМ ТЕХНО, ХАУС, БРЕЙКБИТ И
-              ВСЁ, ЧТО ЗАСТАВЛЯЕТ ТОЛПУ ДВИГАТЬСЯ.
+              МЫ ЗА ИНТЕЛЛИГЕНТНЫЙ АНДЕГРАУНД. СОЗДАЁМ КУЛЬТУРУ ВМЕСТЕ С ВАМИ,
+              ДЕЛИМСЯ ОПЫТОМ И РАСШИРЯЕМ ГРАНИЦЫ. КАЖДЫЙ НАШ СЕТ — ЭТО
+              ПУТЕШЕСТВИЕ ЗА ПРЕДЕЛЫ ПРИВЫЧНОГО.
             </p>
             <Link
               href="/about"
@@ -136,6 +136,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="relative mx-auto max-w-6xl px-4 py-24">
+        <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+          <div className="w-48 shrink-0">
+            <Image
+              src="/dizengof-poster.jpg"
+              alt="DJ ENDE В DIZENGOF/99"
+              width={1024}
+              height={1280}
+              className="border border-accent/20 object-cover"
+            />
+          </div>
+          <div className="mt-6 text-center lg:mt-0 lg:text-left">
+            <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 10 ИЮЛЯ</span>
+            <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">DJ ENDE</h2>
+            <p className="text-sm font-bold tracking-[0.15em] text-accent/80">DIZENGOF/99</p>
+            <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+            <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">
+              БАСКОВ ПЕР. 31, СПБ
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ВХОД СВОБОДНЫЙ</span>
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">19:30</span>
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TECH HOUSE</span>
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ACID HOUSE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative mx-auto max-w-6xl px-4 py-32">
         <span className="graffiti-tag-solid" style={{ bottom: '5%', left: '-15%', rotate: '-10deg' }}>BEATS</span>
         <div className="flex items-end justify-between border-b-2 border-accent/20 pb-8">
@@ -155,6 +184,29 @@ export default function Home() {
           {latestNews.map((item) => (
             <NewsCard key={item.slug} {...item} />
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-accent/10 py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="border-b border-accent/10 pb-6">
+            <span className="text-[9px] font-bold tracking-[0.3em] text-muted/60">● АРХИВ</span>
+            <h2 className="mt-1 text-2xl font-black tracking-tighter">ПРОШЕДШИЕ СОБЫТИЯ</h2>
+          </div>
+          <div className="mt-10 space-y-4">
+            {[
+              { date: "ИЮНЬ 2026", title: "ЛЮПУС-ФЕСТ", location: "ЛЕН. ОБЛАСТЬ" },
+              { date: "МАЙ 2026", title: "ПОДЗЕМНЫЙ ОРНАМЕНТ", location: "VAVILOV LOFT" },
+              { date: "АПРЕЛЬ 2026", title: "LAVRAVECORE НОЧЬ", location: "РЯЗАНЬ" },
+            ].map((event) => (
+              <div key={event.title} className="flex items-center gap-4 border border-accent/5 bg-card/30 px-6 py-4">
+                <span className="w-24 text-[9px] font-semibold tracking-[0.2em] text-muted/60">{event.date}</span>
+                <div className="h-4 w-px bg-accent/20" />
+                <span className="text-xs font-bold tracking-[0.15em]">{event.title}</span>
+                <span className="ml-auto text-[9px] font-semibold tracking-[0.15em] text-muted/60">{event.location}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

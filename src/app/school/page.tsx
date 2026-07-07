@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const directions = [
   {
-    title: "DJ-ДИНГ",
+    title: "ДИДЖЕИНГ",
     desc: "ОБУЧЕНИЕ ДИДЖЕИНГУ С НУЛЯ ДО ПРОФИ. ТЕХНИКА, СВЕДЕНИЕ, СОЗДАНИЕ СЕТОВ.",
     icon: "♪",
   },
@@ -69,6 +69,32 @@ export default function School() {
             </p>
           </div>
         ))}
+      </div>
+
+      <div className="mt-20">
+        <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● ПРЕЗЕНТАЦИЯ</span>
+        <h2 className="mt-2 text-3xl font-black tracking-tighter">ВИДЕО ШКОЛЫ</h2>
+        <div className="mt-2 h-1 w-16 bg-accent" />
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          <div className="aspect-square w-full max-w-md border-2 border-border/20 bg-card">
+            <video
+              src="/school-video.mp4"
+              className="h-full w-full object-contain"
+              controls
+              preload="metadata"
+              playsInline
+            />
+          </div>
+          <div className="aspect-square w-full max-w-md border-2 border-border/20 bg-card">
+            <video
+              src="/streetart-video.mp4"
+              className="h-full w-full object-contain"
+              controls
+              preload="metadata"
+              playsInline
+            />
+          </div>
+        </div>
       </div>
 
       <div className="mt-20 border-t border-accent/20 pt-12 text-center">
