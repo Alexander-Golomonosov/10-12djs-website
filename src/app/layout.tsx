@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://1012djs.ru"),
   title: "10/12DJ'S | КОМАНДА ДИДЖЕЕВ",
   description: "10/12DJ'S — КОМАНДА ПРОФЕССИОНАЛЬНЫХ ДИДЖЕЕВ.",
 };
