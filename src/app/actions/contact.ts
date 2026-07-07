@@ -1,5 +1,7 @@
 "use server";
 
+import nodemailer from "nodemailer";
+
 export async function submitContact(prev: { success: boolean; message: string }, formData: FormData) {
   const name = formData.get("name")?.toString().trim();
   const email = formData.get("email")?.toString().trim();
@@ -14,27 +16,27 @@ export async function submitContact(prev: { success: boolean; message: string },
   }
 
   try {
-    const res = await fetch("https://formsubmit.co/ajax/10djs12_fckngd1@vk.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-        _subject: `Новое сообщение с сайта от ${name}`,
-        _captcha: "false",
-      }),
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: process.env.SMTP_SECURE === "true",
+      auth: {
+        user: process.env.SMTP_USER || "",
+        pass: process.env.SMTP_PASS || "",
+      },
+    } as nodemailer.TransportOptions);
+
+    await transporter.sendMail({
+      from: process.env.SMTP_FROM || `"${name}" <noreply@10-12djs-website.vercel.app>`,
+      to: "10djs12_fckngd1@vk.com",
+      replyTo: email,
+      subject: `Новое сообщение с сайта от ${name}`,
+      text: `Имя: ${name}\nEmail: ${email}\n\nСообщение:\n${message}`,
+      html: `<p><b>Имя:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Сообщение:</b></p><p>${message.replace(/\n/g, "<br>")}</p>`,
     });
 
-    const data = await res.json();
-
-    if (!res.ok || data.success === false) {
-      throw new Error(data.message || "FormSubmit error");
-    }
-
     return { success: true, message: "Сообщение отправлено! Мы свяжемся с вами." };
-  } catch (e) {
-    console.error("Contact form error:", e);
+  } catch {
     return { success: false, message: "Ошибка отправки. Попробуйте позже." };
   }
 }
