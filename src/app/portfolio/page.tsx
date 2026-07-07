@@ -72,6 +72,18 @@ export default function Portfolio() {
         </p>
       </div>
 
+      {/* soundcloud */}
+      <div className="mt-12">
+        <a
+          href="https://soundcloud.com/10-12djs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block border-2 border-accent bg-accent px-12 py-5 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover"
+        >
+          СЛУШАТЬ НА SOUNDCLOUD →
+        </a>
+      </div>
+
       {/* residents */}
       <div className="mt-20">
         <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● СОСТАВ</span>
@@ -161,16 +173,6 @@ export default function Portfolio() {
           >
             <span className="text-[10px] tracking-[0.2em] text-muted">TELEGRAM:</span>
             @FUCKENCOD
-          </a>
-          <br />
-          <a
-            href="https://soundcloud.com/10-12djs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-sm font-bold tracking-wider text-accent transition-colors hover:text-accent-hover"
-          >
-            <span className="text-[10px] tracking-[0.2em] text-muted">SOUNDCLOUD:</span>
-            10/12DJ'S
           </a>
         </div>
       </div>
