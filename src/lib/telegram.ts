@@ -8,7 +8,25 @@ export type TelegramPost = {
   slug: string;
 };
 
-function parsePost(p: any): TelegramPost {
+export async function fetchLatestPost(token: string, channelUsername: string): Promise<TelegramPost | null> {
+  const res = await fetch(
+    `https://api.telegram.org/bot${token}/getUpdates?timeout=5`
+  );
+
+  if (!res.ok) return null;
+
+  const data = await res.json();
+  if (!data.ok || !data.result?.length) return null;
+
+  const posts = data.result
+    .filter((u: any) => u.channel_post)
+    .map((u: any) => u.channel_post)
+    .filter((p: any) => p.chat?.username === channelUsername.replace("@", ""))
+    .sort((a: any, b: any) => b.date - a.date);
+
+  if (!posts.length) return null;
+
+  const p = posts[0];
   const text = p.text || p.caption || "";
   const lines = text.split("\n");
   const title = lines[0].slice(0, 60) || "Новый пост";
@@ -26,36 +44,4 @@ function parsePost(p: any): TelegramPost {
     messageId: p.message_id,
     slug: `tg-${p.message_id}`,
   };
-}
-
-export async function fetchLatestPost(token: string, channelUsername: string): Promise<TelegramPost | null> {
-  // Try pinned message first
-  const chatRes = await fetch(
-    `https://api.telegram.org/bot${token}/getChat?chat_id=${channelUsername}`
-  );
-
-  if (chatRes.ok) {
-    const chat = await chatRes.json();
-    if (chat.ok && chat.result?.pinned_message) {
-      return parsePost(chat.result.pinned_message);
-    }
-  }
-
-  // Fallback: get latest from recent updates (new posts only)
-  const updatesRes = await fetch(
-    `https://api.telegram.org/bot${token}/getUpdates?timeout=5`
-  );
-
-  if (!updatesRes.ok) return null;
-
-  const updates = await updatesRes.json();
-  if (!updates.ok || !updates.result?.length) return null;
-
-  const posts = updates.result
-    .filter((u: any) => u.channel_post)
-    .map((u: any) => u.channel_post)
-    .filter((p: any) => p.chat?.username === channelUsername.replace("@", ""))
-    .sort((a: any, b: any) => b.date - a.date);
-
-  return posts.length ? parsePost(posts[0]) : null;
 }
