@@ -138,16 +138,90 @@ export default function Home() {
 
       <section className="relative mx-auto max-w-6xl px-4 py-24">
         <div className="border-b-2 border-accent/20 pb-8">
-          <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● АФИША</span>
-          <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">ВСЕ СОБЫТИЯ</h2>
-          <p className="mt-2 text-xs font-semibold tracking-[0.2em] text-muted/60">ПРЕДСТОЯЩИЕ И ПРОШЕДШИЕ</p>
+          <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● СКОРО</span>
+          <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">АФИША</h2>
+          <p className="mt-2 text-xs font-semibold tracking-[0.2em] text-muted/60">ПРЕДСТОЯЩИЕ СОБЫТИЯ</p>
         </div>
-        <Link
-          href="/afisha"
-          className="mt-10 inline-flex items-center gap-2 border-2 border-accent bg-accent px-12 py-5 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover"
-        >
-          СМОТРЕТЬ АФИШУ →
-        </Link>
+        <div className="mt-10 space-y-10">
+          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+            <div className="w-48 shrink-0">
+              <Image
+                src="/dizengof-poster.jpg"
+                alt="DJ ENDE В DIZENGOF/99"
+                width={1024}
+                height={1280}
+                className="border border-accent/20 object-cover"
+              />
+            </div>
+            <div className="mt-6 text-center lg:mt-0 lg:text-left">
+              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 10 ИЮЛЯ</span>
+              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">DJ ENDE</h2>
+              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">DIZENGOF/99</p>
+              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">БАСКОВ ПЕР. 31, СПБ</p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ВХОД СВОБОДНЫЙ</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">19:30</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TECH HOUSE</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ACID HOUSE</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+            <div className="w-48 shrink-0">
+              <Image
+                src="/placeholder-poster.svg"
+                alt="РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ"
+                width={600}
+                height={800}
+                className="border border-accent/20 object-cover"
+              />
+            </div>
+            <div className="mt-6 text-center lg:mt-0 lg:text-left">
+              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 1 АВГУСТА</span>
+              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ</h2>
+              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">АФИША И ОПИСАНИЕ СКОРО</p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TBA</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+            <div className="w-48 shrink-0">
+              <Image
+                src="/upcoming-lupus-fest.jpg"
+                alt="ЛЮПУС-ФЕСТ 2026"
+                width={1080}
+                height={1350}
+                className="border border-accent/20 object-cover"
+              />
+            </div>
+            <div className="mt-6 text-center lg:mt-0 lg:text-left">
+              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 7–9 АВГУСТА</span>
+              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">ЛЮПУС-ФЕСТ 2026</h2>
+              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">ЛЕНИНГРАДСКАЯ ОБЛАСТЬ</p>
+              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+              <p className="mt-4 max-w-xl text-[10px] font-semibold leading-relaxed tracking-[0.2em] text-muted">
+                ФЕСТИВАЛЬ О ТВОРЧЕСТВЕ, О СВОБОДЕ, О ВОЗМОЖНОСТЯХ И О МУЗЫКЕ.<br />
+                О ТОМ, ЧТО МОЖЕТ СДЕЛАТЬ КАЖДЫЙ ИЗ ВАС, СТАВ ЧАСТЬЮ ЧЕГО-ТО БОЛЬШЕГО.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ФЕСТИВАЛЬ</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ТВОРЧЕСТВО</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">МУЗЫКА</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/afisha"
+            className="inline-flex items-center gap-2 border border-accent/30 px-8 py-4 text-xs font-bold tracking-[0.2em] text-accent transition-all hover:border-accent/60"
+          >
+            ВСЕ СОБЫТИЯ (ВКЛ. ПРОШЕДШИЕ) →
+          </Link>
+        </div>
       </section>
 
       <section className="relative mx-auto max-w-6xl px-4 py-32">
@@ -172,20 +246,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-accent/10 py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="border-b border-accent/10 pb-6">
-            <span className="text-[9px] font-bold tracking-[0.3em] text-muted/60">● АРХИВ</span>
-            <h2 className="mt-1 text-2xl font-black tracking-tighter">ПРОШЕДШИЕ СОБЫТИЯ</h2>
-          </div>
-          <Link
-            href="/afisha"
-            className="mt-10 inline-flex items-center gap-2 border border-accent/30 px-8 py-4 text-xs font-bold tracking-[0.2em] text-accent transition-all hover:border-accent/60"
-          >
-            ВСЕ ПРОШЕДШИЕ СОБЫТИЯ →
-          </Link>
-        </div>
-      </section>
     </>
   );
 }
