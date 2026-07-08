@@ -10,32 +10,38 @@ const directions = [
   {
     title: "ДИДЖЕИНГ",
     desc: "ОБУЧЕНИЕ ДИДЖЕИНГУ С НУЛЯ ДО ПРОФИ. ТЕХНИКА, СВЕДЕНИЕ, СОЗДАНИЕ СЕТОВ.",
-    icon: "♪",
+    tags: ["СВЕДЕНИЕ", "ТЕХНИКА", "СЕТЫ"],
+    image: "/school-djing.jpg",
   },
   {
     title: "НАПИСАНИЕ МУЗЫКИ",
     desc: "СОЗДАНИЕ ТРЕКОВ В ABLETON / FL STUDIO. ТЕОРИЯ МУЗЫКИ, СИНТЕЗ, АРРАНЖИРОВКА.",
-    icon: "♫",
+    tags: ["ABLETON", "FL STUDIO", "АРРАНЖИРОВКА"],
+    image: null,
   },
   {
     title: "СТРИТ-АРТ",
     desc: "ГРАФФИТИ, ТРАФАРЕТЫ, МУРАЛЫ. ИСТОРИЯ УЛИЧНОГО ИСКУССТВА И ПРАКТИКА.",
-    icon: "✖",
+    tags: ["ГРАФФИТИ", "ТРАФАРЕТЫ", "МУРАЛЫ"],
+    image: null,
   },
   {
     title: "ТАТУ",
     desc: "ОСНОВЫ ТАТУИРОВКИ: БЕЗОПАСНОСТЬ, СТИЛИ, ПОСТРОЕНИЕ ЭСКИЗОВ, ПРАКТИКА НА НАКЛАДНЫХ.",
-    icon: "†",
+    tags: ["БЕЗОПАСНОСТЬ", "ЭСКИЗЫ", "ПРАКТИКА"],
+    image: null,
   },
   {
     title: "ТЕХНО-ФИТНЕС",
     desc: "ТРЕНИРОВКИ ПОД ЭЛЕКТРОННУЮ МУЗЫКУ. ВЫНОСЛИВОСТЬ, СИЛА, РИТМ.",
-    icon: "⚡",
+    tags: ["ВЫНОСЛИВОСТЬ", "СИЛА", "РИТМ"],
+    image: null,
   },
   {
     title: "КИНО-КЛУБ",
     desc: "ПРОСМОТРЫ И ОБСУЖДЕНИЯ ДОКУМЕНТАЛЬНЫХ ФИЛЬМОВ О МУЗЫКЕ И КУЛЬТУРЕ.",
-    icon: "⊡",
+    tags: ["ДОКУМЕНТАЛЬНОЕ", "МУЗЫКА", "КУЛЬТУРА"],
+    image: null,
   },
 ];
 
@@ -54,30 +60,36 @@ export default function School() {
         ОБУЧЕНИЕ, ПРАКТИКА, СООБЩЕСТВО. МУЗЫКА, ИСКУССТВО, ТЕЛО.
       </p>
 
-      <div className="mt-10 max-w-sm border border-accent/10 bg-card/50 p-3">
-        <Image
-          src="/school-photo.jpg"
-          alt="АНДЕГРАУНД ШКОЛА 10/12DJ'S"
-          width={600}
-          height={400}
-          className="w-full border border-accent/20 object-cover"
-        />
-      </div>
-
-      <div className="mt-16 grid gap-3 sm:grid-cols-2">
+      <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {directions.map((d) => (
-          <div
-            key={d.title}
-            className="group border border-border/20 bg-card p-8 transition-all hover:border-accent/40"
-          >
-            <span className="text-3xl text-accent/60">{d.icon}</span>
-            <h3 className="mt-6 text-sm font-bold tracking-wider transition-colors group-hover:text-accent">
-              {d.title}
-            </h3>
-            <div className="mt-3 h-px w-8 bg-accent/50" />
-            <p className="mt-4 text-xs font-semibold leading-relaxed tracking-wider text-muted">
-              {d.desc}
-            </p>
+          <div key={d.title} className="flex flex-col border border-accent/10 bg-card/50">
+            <div className="aspect-[3/4] flex items-center justify-center border-b border-accent/10 bg-card/80">
+              {d.image ? (
+                <Image src={d.image} alt={d.title} width={400} height={533} className="h-full w-full object-cover" />
+              ) : (
+                <div className="flex flex-col items-center gap-3 p-8 text-center">
+                  <span className="text-4xl opacity-20">◈</span>
+                  <span className="text-[9px] font-bold tracking-[0.2em] text-muted/40">ФОТО СКОРО</span>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-1 flex-col p-6">
+              <div>
+                <span className="text-[10px] font-semibold tracking-[0.25em] text-accent/60">НАПРАВЛЕНИЕ</span>
+                <h2 className="mt-1 text-lg font-black tracking-tighter">{d.title}</h2>
+              </div>
+              <div className="mt-3 h-px w-full bg-accent/20" />
+              <p className="mt-3 text-[10px] font-semibold leading-relaxed tracking-wider text-muted">
+                {d.desc}
+              </p>
+              <div className="mt-auto flex flex-wrap gap-2 pt-4">
+                {d.tags.map((tag) => (
+                  <span key={tag} className="border border-accent/20 px-2 py-1 text-[8px] font-bold tracking-[0.15em] text-accent/70">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>
