@@ -17,13 +17,13 @@ const directions = [
     title: "НАПИСАНИЕ МУЗЫКИ",
     desc: "СОЗДАНИЕ ТРЕКОВ В ABLETON / FL STUDIO. ТЕОРИЯ МУЗЫКИ, СИНТЕЗ, АРРАНЖИРОВКА.",
     tags: ["ABLETON", "FL STUDIO", "АРРАНЖИРОВКА"],
-    image: null,
+    image: "/school-music.jpg",
   },
   {
     title: "СТРИТ-АРТ",
     desc: "ГРАФФИТИ, ТРАФАРЕТЫ, МУРАЛЫ. ИСТОРИЯ УЛИЧНОГО ИСКУССТВА И ПРАКТИКА.",
     tags: ["ГРАФФИТИ", "ТРАФАРЕТЫ", "МУРАЛЫ"],
-    image: null,
+    image: "/school-streetart.jpg",
   },
   {
     title: "ТАТУ",
