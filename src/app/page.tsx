@@ -139,7 +139,7 @@ export default function Home() {
       <section className="relative mx-auto max-w-6xl px-4 py-24">
         <div className="border-b-2 border-accent/20 pb-8">
           <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● СКОРО</span>
-          <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">ПРЕДСТОЯЩИЕ СОБЫТИЯ</h2>
+          <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">АФИША</h2>
           <p className="mt-2 text-xs font-semibold tracking-[0.2em] text-muted/60">БУДЬТЕ В КУРСЕ</p>
         </div>
         <div className="mt-10 space-y-10">
