@@ -27,7 +27,7 @@ const items = [
     subtitle: "OVERSIZE С ЛОГОТИПОМ",
     price: "2 499 ₽",
     description: "ХЛОПКОВАЯ ФУТБОЛКА OVERSIZE С ОРИГИНАЛЬНЫМ ПРИНТОМ 10/12DJ'S. ДОСТУПНА В ЧЁРНОМ И БЕЛОМ ЦВЕТАХ.",
-    image: null,
+    image: "/merch-tshirt.jpg",
     tags: ["ОДЕЖДА", "ХЛОПОК", "OVERSIZE"],
   },
 ];
