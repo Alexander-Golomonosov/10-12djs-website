@@ -18,6 +18,9 @@ export default function Contact() {
       <div className="mt-16 grid gap-16 lg:grid-cols-2">
         <div>
           <ContactForm />
+          <p className="mt-3 text-[9px] font-semibold tracking-[0.15em] text-muted/40">
+            * НАЖИМАЯ КНОПКУ «ОТПРАВИТЬ», ВЫ ДАЁТЕ СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ
+          </p>
         </div>
         <div className="space-y-12">
           <div>

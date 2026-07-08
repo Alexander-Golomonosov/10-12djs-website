@@ -5,7 +5,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 <!-- END:nextjs-agent-rules -->
 
 <!-- BEGIN:session-context -->
-# Session context (auto-saved 2026-07-07)
+# Session context (auto-saved 2026-07-08)
 
 ## Project
 - **Name:** Site1012djs
@@ -52,4 +52,23 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Push to master auto-deploys via Vercel
 - PowerShell execution policy blocks npm directly — always use `powershell -ExecutionPolicy Bypass -Command "..."`
 - The user reviews changes live after pushes
+
+## VK Ads Campaign (DJing lessons)
+- **Status:** Step 3 (объявление) — заполнено, не опубликовано
+- **Goal:** Клики по рекламе → /school
+- **URL:** `https://1012djs.ru/school` (без UTM)
+- **Budget:** 400 ₽/день
+- **Geo:** СПб
+- **Age:** 18–30
+- **Gender:** Все
+- **Interests:** Нет
+- **Reach:** 1.9M
+- **Title:** «Научу играть в клубах СПб»
+- **Short description:** «Обучение в полях. Практика. Комьюнити. Гибкая оплата за занятие»
+- **Text next to button:** «Начни играть уже сегодня» (выбран вариант)
+- **Long description (for social feeds):** «Школа диджеинга 10/12 DJ'S — обучение в полях с практикой в реальных клубах СПб. Без скучной теории, только пульт, комьюнити и твой первый сет. Гибкая оплата за занятие — платишь за каждое отдельно. Подходит для новичков и тех, кто уже пробовал. Записывайся и играй уже через месяц»
+- **Button text:** «Записаться» (can change to «Узнать больше»)
+- **Media:** Загружены 5 изображений (креативы по TЗ из `tz_djad_creative.txt`)
+- **Logo:** Загружен
+- **Advertiser info:** Заполнено
 <!-- END:session-context -->
