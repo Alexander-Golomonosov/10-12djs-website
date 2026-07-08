@@ -162,20 +162,27 @@ export default async function Home() {
           <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
             <div className="w-48 shrink-0">
               <Image
-                src="/placeholder-poster.svg"
-                alt="РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ"
+                src="/poster-krugi.jpg"
+                alt="ВЕЙК-ПАРК КРУГИ НА ВОДЕ"
                 width={600}
                 height={800}
                 className="border border-accent/20 object-cover"
               />
             </div>
             <div className="mt-6 text-center lg:mt-0 lg:text-left">
-              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 1 АВГУСТА</span>
-              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ</h2>
+              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 11 ИЮЛЯ</span>
+              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">ВЕЙК-ПАРК «КРУГИ НА ВОДЕ»</h2>
+              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">18:00–23:00</p>
               <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
-              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">АФИША И ОПИСАНИЕ СКОРО</p>
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TBA</span>
+              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">РЖЕВСКАЯ УЛ. 2, ЛИТЕРА А, СПБ</p>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                <span className="text-[9px] font-bold tracking-[0.2em] text-accent/70">DEAD RIPPLE</span>
+                <span className="text-[9px] text-muted/40">/</span>
+                <span className="text-[9px] font-bold tracking-[0.2em] text-accent/70">SHAWTY</span>
+              </div>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">LIVE DJ SET</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">HOUSE</span>
               </div>
             </div>
           </div>
