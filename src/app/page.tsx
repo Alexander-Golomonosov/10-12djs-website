@@ -1,29 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import NewsCard from "@/components/NewsCard";
+import { fetchLatestPost, fetchRecentPosts } from "@/lib/telegram";
 
-const latestNews = [
-  {
-    title: "ЛЮПУС-ФЕСТ 2026",
-    excerpt: "СКОРО ВЫСТУПИМ НА ЛЕТНЕМ ФЕСТИВАЛЕ ЛЮПУС-ФЕСТ В ЛЕН. ОБЛАСТИ.",
-    date: "ИЮЛЬ 2026",
-    slug: "lupus-fest",
-  },
-  {
-    title: "DJ ENDE В DIZENGOF/99",
-    excerpt: "10 ИЮЛЯ DJ ENDE ВЫСТУПАЕТ В РЕСТОРАНЕ ИЗРАИЛЬСКОЙ КУХНИ DIZENGOF/99, СПБ, БАСКОВ ПЕРЕУЛОК 31.",
-    date: "10 ИЮЛЯ 2026",
-    slug: "dj-ende-dizengof",
-  },
-  {
-    title: "РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ",
-    excerpt: "1 АВГУСТА — РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ.",
-    date: "1 АВГУСТА 2026",
-    slug: "ptichya-lichnost",
-  },
-];
+export const dynamic = "force-dynamic";
 
-export default function Home() {
+export default async function Home() {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  let telegramPost: Awaited<ReturnType<typeof fetchLatestPost>> | null = null;
+  let recentPosts: Awaited<ReturnType<typeof fetchRecentPosts>> = [];
+
+  if (token) {
+    [telegramPost, recentPosts] = await Promise.all([
+      fetchLatestPost(token, "@I0_12_djs"),
+      fetchRecentPosts(token, "@I0_12_djs"),
+    ]);
+  }
+
   return (
     <>
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden hero-glow">
@@ -239,10 +231,41 @@ export default function Home() {
             ВСЕ СОБЫТИЯ →
           </Link>
         </div>
+        {telegramPost && (
+          <a
+            href={`https://t.me/I0_12_djs/${telegramPost.messageId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 flex items-center justify-between border-2 border-accent/30 bg-accent/5 p-5 transition-all hover:border-accent"
+          >
+            <div>
+              <span className="text-[10px] font-bold tracking-[0.3em] text-accent">📢 ПОСЛЕДНИЙ ПОСТ В TELEGRAM</span>
+              <p className="mt-2 text-xs font-semibold tracking-wider text-foreground">{telegramPost.title}</p>
+            </div>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-accent">ОТКРЫТЬ →</span>
+          </a>
+        )}
         <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
-          {latestNews.map((item) => (
-            <NewsCard key={item.slug} {...item} />
-          ))}
+          {recentPosts.length > 0 ? recentPosts.map((item) => (
+            <a
+              key={item.slug}
+              href={`https://t.me/I0_12_djs/${item.messageId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border-2 border-border/20 bg-card p-6 transition-all hover:border-accent/50 hover:bg-card-hover"
+            >
+              <time className="text-[10px] font-semibold tracking-widest text-muted">{item.date}</time>
+              <h3 className="mt-3 text-sm font-bold tracking-wider transition-colors group-hover:text-accent">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-xs leading-relaxed text-muted">{item.excerpt}</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-bold tracking-widest text-accent">
+                ОТКРЫТЬ В TG →
+              </span>
+            </a>
+          )) : (
+            <p className="col-span-full text-xs font-semibold tracking-wider text-muted/60">НОВОСТЕЙ ПОКА НЕТ</p>
+          )}
         </div>
       </section>
 

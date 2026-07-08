@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import NewsCard from "@/components/NewsCard";
-import { fetchLatestPost } from "@/lib/telegram";
+import { fetchLatestPost, fetchRecentPosts } from "@/lib/telegram";
 
 export const metadata: Metadata = {
   title: "НОВОСТИ | 10/12DJ'S",
@@ -8,33 +7,16 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const allNews = [
-  {
-    title: "ЛЮПУС-ФЕСТ 2026",
-    excerpt: "СКОРО ВЫСТУПИМ НА ЛЕТНЕМ ФЕСТИВАЛЕ ЛЮПУС-ФЕСТ В ЛЕН. ОБЛАСТИ.",
-    date: "ИЮЛЬ 2026",
-    slug: "lupus-fest",
-  },
-  {
-    title: "DJ ENDE В DIZENGOF/99",
-    excerpt: "10 ИЮЛЯ DJ ENDE ВЫСТУПАЕТ В РЕСТОРАНЕ ИЗРАИЛЬСКОЙ КУХНИ DIZENGOF/99, СПБ, БАСКОВ ПЕРЕУЛОК 31.",
-    date: "10 ИЮЛЯ 2026",
-    slug: "dj-ende-dizengof",
-  },
-  {
-    title: "РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ",
-    excerpt: "1 АВГУСТА — РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ.",
-    date: "1 АВГУСТА 2026",
-    slug: "ptichya-lichnost",
-  },
-];
-
 export default async function News() {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   let telegramPost: Awaited<ReturnType<typeof fetchLatestPost>> | null = null;
+  let recentPosts: Awaited<ReturnType<typeof fetchRecentPosts>> = [];
 
   if (token) {
-    telegramPost = await fetchLatestPost(token, "@I0_12_djs");
+    [telegramPost, recentPosts] = await Promise.all([
+      fetchLatestPost(token, "@I0_12_djs"),
+      fetchRecentPosts(token, "@I0_12_djs"),
+    ]);
   }
 
   return (
@@ -62,9 +44,26 @@ export default async function News() {
       )}
 
       <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
-        {allNews.map((item) => (
-          <NewsCard key={item.slug} {...item} />
-        ))}
+        {recentPosts.length > 0 ? recentPosts.map((item) => (
+          <a
+            key={item.slug}
+            href={`https://t.me/I0_12_djs/${item.messageId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group border-2 border-border/20 bg-card p-6 transition-all hover:border-accent/50 hover:bg-card-hover"
+          >
+            <time className="text-[10px] font-semibold tracking-widest text-muted">{item.date}</time>
+            <h3 className="mt-3 text-sm font-bold tracking-wider transition-colors group-hover:text-accent">
+              {item.title}
+            </h3>
+            <p className="mt-3 text-xs leading-relaxed text-muted">{item.excerpt}</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-xs font-bold tracking-widest text-accent">
+              ОТКРЫТЬ В TG →
+            </span>
+          </a>
+        )) : (
+          <p className="col-span-full text-xs font-semibold tracking-wider text-muted/60">НОВОСТЕЙ ПОКА НЕТ</p>
+        )}
       </div>
     </div>
   );
