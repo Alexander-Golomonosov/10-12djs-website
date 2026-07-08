@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/portfolio", label: "Портфолио" },
   { href: "/quiz", label: "Тест" },
   { href: "/school", label: "Школа" },
+  { href: "/merch", label: "Мерч" },
   { href: "/contact", label: "Контакты" },
 ];
 
