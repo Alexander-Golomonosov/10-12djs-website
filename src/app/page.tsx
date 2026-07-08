@@ -165,6 +165,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="relative mx-auto max-w-6xl px-4 py-24">
+        <div className="border-b-2 border-accent/20 pb-8">
+          <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● СКОРО</span>
+          <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">ПРЕДСТОЯЩИЕ СОБЫТИЯ</h2>
+          <p className="mt-2 text-xs font-semibold tracking-[0.2em] text-muted/60">БУДЬТЕ В КУРСЕ</p>
+        </div>
+        <div className="mt-10 flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+          <div className="w-48 shrink-0">
+            <Image
+              src="/upcoming-lupus-fest.jpg"
+              alt="ЛЮПУС-ФЕСТ 2026"
+              width={1080}
+              height={1350}
+              className="border border-accent/20 object-cover"
+            />
+          </div>
+          <div className="mt-6 text-center lg:mt-0 lg:text-left">
+            <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 7–9 АВГУСТА</span>
+            <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">ЛЮПУС-ФЕСТ 2026</h2>
+            <p className="text-sm font-bold tracking-[0.15em] text-accent/80">ЛЕНИНГРАДСКАЯ ОБЛАСТЬ</p>
+            <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+            <p className="mt-4 max-w-xl text-[10px] font-semibold leading-relaxed tracking-[0.2em] text-muted">
+              ФЕСТИВАЛЬ О ТВОРЧЕСТВЕ, О СВОБОДЕ, О ВОЗМОЖНОСТЯХ И О МУЗЫКЕ.<br />
+              О ТОМ, ЧТО МОЖЕТ СДЕЛАТЬ КАЖДЫЙ ИЗ ВАС, СТАВ ЧАСТЬЮ ЧЕГО-ТО БОЛЬШЕГО.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ФЕСТИВАЛЬ</span>
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ТВОРЧЕСТВО</span>
+              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">МУЗЫКА</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative mx-auto max-w-6xl px-4 py-32">
         <span className="graffiti-tag-solid" style={{ bottom: '5%', left: '-15%', rotate: '-10deg' }}>BEATS</span>
         <div className="flex items-end justify-between border-b-2 border-accent/20 pb-8">
@@ -329,6 +363,32 @@ export default function Home() {
                   <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">HARD BASS</span>
                   <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">INDUSTRIAL</span>
                   <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ELECTRO</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ТВОЙ ПЕРВЫЙ РЕЙВ / 31 ЯНВАРЯ */}
+            <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-6 lg:flex-row lg:gap-10">
+              <div className="w-48 shrink-0">
+                <Image
+                  src="/past-tvoy-perviy-reiv.jpg"
+                  alt="ТВОЙ ПЕРВЫЙ РЕЙВ"
+                  width={600}
+                  height={800}
+                  className="border border-accent/20 object-cover"
+                />
+              </div>
+              <div className="mt-6 text-center lg:mt-0 lg:text-left">
+                <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 31 ЯНВАРЯ</span>
+                <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">ТВОЙ ПЕРВЫЙ РЕЙВ</h2>
+                <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+                <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">
+                  ДЕБЮТНЫЙ РЕЙВ — НАЧНИ СВОЙ ПУТЬ В МУЗЫКЕ
+                </p>
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                  <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TECHNO</span>
+                  <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">HOUSE</span>
+                  <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">D&B</span>
                 </div>
               </div>
             </div>
