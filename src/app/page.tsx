@@ -22,30 +22,30 @@ export default async function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,_#ff4242_0%,_transparent_60%)] opacity-[0.12] hero-pulse-bg" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_60%,_#ff4242_0%,_transparent_50%)] opacity-[0.08] hero-flicker-bg" />
 
-        <div className="drip" style={{ left: '5%', top: 0, height: '200px', animationDelay: '-2s' }} />
-        <div className="drip" style={{ left: '15%', top: 0, height: '120px', animationDelay: '-5s' }} />
-        <div className="drip" style={{ left: '30%', top: 0, height: '250px', animationDelay: '-1s' }} />
-        <div className="drip" style={{ left: '50%', top: 0, height: '80px', animationDelay: '-7s' }} />
-        <div className="drip" style={{ left: '65%', top: 0, height: '180px', animationDelay: '-3s' }} />
-        <div className="drip" style={{ left: '78%', top: 0, height: '140px', animationDelay: '-6s' }} />
-        <div className="drip" style={{ left: '90%', top: 0, height: '220px', animationDelay: '-4s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '5%', top: 0, height: '200px', animationDelay: '-2s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '15%', top: 0, height: '120px', animationDelay: '-5s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '30%', top: 0, height: '250px', animationDelay: '-1s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '50%', top: 0, height: '80px', animationDelay: '-7s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '65%', top: 0, height: '180px', animationDelay: '-3s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '78%', top: 0, height: '140px', animationDelay: '-6s' }} />
+        <div className="drip max-sm:hidden" style={{ left: '90%', top: 0, height: '220px', animationDelay: '-4s' }} />
 
-        <div className="splatter" style={{ width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(255,66,66,0.1) 0%, transparent 70%)', top: '5%', left: '-5%' }} />
-        <div className="splatter" style={{ width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(255,66,66,0.06) 0%, transparent 70%)', bottom: '10%', right: '5%' }} />
-        <div className="splatter" style={{ width: '80px', height: '80px', background: 'radial-gradient(circle, rgba(255,66,66,0.08) 0%, transparent 70%)', top: '60%', left: '20%' }} />
-        <div className="splatter" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(255,66,66,0.04) 0%, transparent 60%)', top: '20%', right: '-10%' }} />
+        <div className="splatter max-sm:hidden" style={{ width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(255,66,66,0.1) 0%, transparent 70%)', top: '5%', left: '-5%' }} />
+        <div className="splatter max-sm:hidden" style={{ width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(255,66,66,0.06) 0%, transparent 70%)', bottom: '10%', right: '5%' }} />
+        <div className="splatter max-sm:hidden" style={{ width: '80px', height: '80px', background: 'radial-gradient(circle, rgba(255,66,66,0.08) 0%, transparent 70%)', top: '60%', left: '20%' }} />
+        <div className="splatter max-sm:hidden" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(255,66,66,0.04) 0%, transparent 60%)', top: '20%', right: '-10%' }} />
 
-        <span className="graffiti-tag-solid" style={{ top: '5%', left: '-5%', rotate: '-12deg' }}>10/12</span>
-        <span className="graffiti-tag-solid" style={{ bottom: '5%', right: '-10%', rotate: '18deg' }}>DJS</span>
-        <span className="graffiti-tag" style={{ top: '20%', right: '-5%', rotate: '25deg', animationDelay: '-3s' }}>SOUND</span>
-        <span className="graffiti-tag-light" style={{ bottom: '25%', left: '-8%', rotate: '-22deg', animationDelay: '-5s' }}>BASS</span>
-        <span className="graffiti-tag" style={{ bottom: '40%', right: '15%', rotate: '8deg', animationDelay: '-7s', fontSize: 'clamp(6rem, 18vw, 18rem)', color: 'rgba(255,66,66,0.02)' }}>BEAT</span>
+        <span className="graffiti-tag-solid max-sm:hidden" style={{ top: '5%', left: '-5%', rotate: '-12deg' }}>10/12</span>
+        <span className="graffiti-tag-solid max-sm:hidden" style={{ bottom: '5%', right: '-10%', rotate: '18deg' }}>DJS</span>
+        <span className="graffiti-tag max-sm:hidden" style={{ top: '20%', right: '-5%', rotate: '25deg', animationDelay: '-3s' }}>SOUND</span>
+        <span className="graffiti-tag-light max-sm:hidden" style={{ bottom: '25%', left: '-8%', rotate: '-22deg', animationDelay: '-5s' }}>BASS</span>
+        <span className="graffiti-tag max-sm:hidden" style={{ bottom: '40%', right: '15%', rotate: '8deg', animationDelay: '-7s', fontSize: 'clamp(6rem, 18vw, 18rem)', color: 'rgba(255,66,66,0.02)' }}>BEAT</span>
 
-        <div className="absolute top-1/3 right-8 border-2 border-accent/15 px-5 py-2 rotate-12">
+        <div className="absolute top-1/3 right-8 border-2 border-accent/15 px-5 py-2 rotate-12 max-sm:hidden">
           <span className="text-[8px] font-bold tracking-[0.3em] text-accent/40">EST. 2025</span>
         </div>
-        <div className="absolute bottom-1/4 left-6 h-40 w-0.5 bg-gradient-to-b from-accent/40 to-transparent rotate-[20deg]" />
-        <div className="absolute top-1/4 right-4 h-56 w-0.5 bg-gradient-to-b from-accent/20 to-transparent rotate-[-15deg]" />
+        <div className="absolute bottom-1/4 left-6 h-40 w-0.5 bg-gradient-to-b from-accent/40 to-transparent rotate-[20deg] max-sm:hidden" />
+        <div className="absolute top-1/4 right-4 h-56 w-0.5 bg-gradient-to-b from-accent/20 to-transparent rotate-[-15deg] max-sm:hidden" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
           <div className="mb-10 flex justify-center">
@@ -92,10 +92,10 @@ export default async function Home() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-4 py-40">
-        <span className="graffiti-tag-solid" style={{ top: '-5%', right: '-8%', rotate: '12deg' }}>SOUND</span>
-        <span className="graffiti-tag-light" style={{ bottom: '-10%', left: '-10%', rotate: '-15deg', animationDelay: '-4s' }}>BEATS</span>
-        <div className="drip" style={{ left: '20%', top: 0, height: '100px', animationDelay: '-2s' }} />
-        <div className="splatter" style={{ width: '120px', height: '120px', background: 'radial-gradient(circle, rgba(255,66,66,0.05) 0%, transparent 70%)', top: '-10%', right: '20%' }} />
+        <span className="graffiti-tag-solid max-sm:hidden" style={{ top: '-5%', right: '-8%', rotate: '12deg' }}>SOUND</span>
+        <span className="graffiti-tag-light max-sm:hidden" style={{ bottom: '-10%', left: '-10%', rotate: '-15deg', animationDelay: '-4s' }}>BEATS</span>
+        <div className="drip max-sm:hidden" style={{ left: '20%', top: 0, height: '100px', animationDelay: '-2s' }} />
+        <div className="splatter max-sm:hidden" style={{ width: '120px', height: '120px', background: 'radial-gradient(circle, rgba(255,66,66,0.05) 0%, transparent 70%)', top: '-10%', right: '20%' }} />
         <div className="grid gap-20 lg:grid-cols-2 lg:gap-24">
           <div>
             <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● ПОЗНАКОМИМСЯ</span>
@@ -217,7 +217,7 @@ export default async function Home() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-4 py-32">
-        <span className="graffiti-tag-solid" style={{ bottom: '5%', left: '-15%', rotate: '-10deg' }}>BEATS</span>
+        <span className="graffiti-tag-solid max-sm:hidden" style={{ bottom: '5%', left: '-15%', rotate: '-10deg' }}>BEATS</span>
         <div className="flex items-end justify-between border-b-2 border-accent/20 pb-8">
           <div>
             <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● МЕДИА</span>
