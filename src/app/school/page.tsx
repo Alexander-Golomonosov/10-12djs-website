@@ -54,13 +54,13 @@ export default function School() {
         ОБУЧЕНИЕ, ПРАКТИКА, СООБЩЕСТВО. МУЗЫКА, ИСКУССТВО, ТЕЛО.
       </p>
 
-      <div className="mt-10">
+      <div className="mt-10 max-w-sm border border-accent/10 bg-card/50 p-3">
         <Image
           src="/school-photo.jpg"
           alt="АНДЕГРАУНД ШКОЛА 10/12DJ'S"
-          width={1200}
-          height={800}
-          className="w-full border-2 border-accent/20 object-cover"
+          width={600}
+          height={400}
+          className="w-full border border-accent/20 object-cover"
         />
       </div>
 
