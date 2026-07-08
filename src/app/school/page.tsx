@@ -103,8 +103,9 @@ export default function School() {
             <video
               src="/school-video.mp4"
               className="h-full w-full object-contain"
-              controls
-              preload="metadata"
+              autoPlay
+              muted
+              loop
               playsInline
             />
           </div>
@@ -112,8 +113,9 @@ export default function School() {
             <video
               src="/streetart-video.mp4"
               className="h-full w-full object-contain"
-              controls
-              preload="metadata"
+              autoPlay
+              muted
+              loop
               playsInline
             />
           </div>

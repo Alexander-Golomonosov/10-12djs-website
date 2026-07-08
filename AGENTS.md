@@ -47,6 +47,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Fixed "DJ-ДИНГ" → "ДИДЖЕИНГ" on /school page
 - School videos resized: square containers (`aspect-square`, `max-w-md`) with `object-contain` to keep original proportions smaller
 - Favicon `src/app/icon.svg` uses `#ff4242` red logo — working after cache clear
+- Added personal data processing consent disclaimer on /contact page («Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных»)
 
 ## Key Context
 - Push to master auto-deploys via Vercel
