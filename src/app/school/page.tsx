@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "ШКОЛА | 10/12DJ'S",
@@ -52,6 +53,16 @@ export default function School() {
         10/12DJ&apos;S ЗАПУСКАЕТ ШКОЛУ АНДЕГРАУНДНЫХ НАПРАВЛЕНИЙ.
         ОБУЧЕНИЕ, ПРАКТИКА, СООБЩЕСТВО. МУЗЫКА, ИСКУССТВО, ТЕЛО.
       </p>
+
+      <div className="mt-10">
+        <Image
+          src="/school-photo.jpg"
+          alt="АНДЕГРАУНД ШКОЛА 10/12DJ'S"
+          width={1200}
+          height={800}
+          className="w-full border-2 border-accent/20 object-cover"
+        />
+      </div>
 
       <div className="mt-16 grid gap-3 sm:grid-cols-2">
         {directions.map((d) => (
