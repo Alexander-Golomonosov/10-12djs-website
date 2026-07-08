@@ -137,41 +137,38 @@ export default function Home() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-4 py-24">
-        <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
-          <div className="w-48 shrink-0">
-            <Image
-              src="/dizengof-poster.jpg"
-              alt="DJ ENDE В DIZENGOF/99"
-              width={1024}
-              height={1280}
-              className="border border-accent/20 object-cover"
-            />
-          </div>
-          <div className="mt-6 text-center lg:mt-0 lg:text-left">
-            <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 10 ИЮЛЯ</span>
-            <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">DJ ENDE</h2>
-            <p className="text-sm font-bold tracking-[0.15em] text-accent/80">DIZENGOF/99</p>
-            <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
-            <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">
-              БАСКОВ ПЕР. 31, СПБ
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ВХОД СВОБОДНЫЙ</span>
-              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">19:30</span>
-              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TECH HOUSE</span>
-              <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ACID HOUSE</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative mx-auto max-w-6xl px-4 py-24">
         <div className="border-b-2 border-accent/20 pb-8">
           <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">● СКОРО</span>
           <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">ПРЕДСТОЯЩИЕ СОБЫТИЯ</h2>
           <p className="mt-2 text-xs font-semibold tracking-[0.2em] text-muted/60">БУДЬТЕ В КУРСЕ</p>
         </div>
         <div className="mt-10 space-y-10">
+          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+            <div className="w-48 shrink-0">
+              <Image
+                src="/dizengof-poster.jpg"
+                alt="DJ ENDE В DIZENGOF/99"
+                width={1024}
+                height={1280}
+                className="border border-accent/20 object-cover"
+              />
+            </div>
+            <div className="mt-6 text-center lg:mt-0 lg:text-left">
+              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 10 ИЮЛЯ</span>
+              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">DJ ENDE</h2>
+              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">DIZENGOF/99</p>
+              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">
+                БАСКОВ ПЕР. 31, СПБ
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ВХОД СВОБОДНЫЙ</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">19:30</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TECH HOUSE</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ACID HOUSE</span>
+              </div>
+            </div>
+          </div>
           <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
             <div className="w-48 shrink-0">
               <Image
