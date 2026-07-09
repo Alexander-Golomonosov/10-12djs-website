@@ -1,20 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { fetchLatestPost, fetchRecentPosts } from "@/lib/telegram";
+import { getUpcomingEventsLimited } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
   let telegramPost: Awaited<ReturnType<typeof fetchLatestPost>> | null = null;
   let recentPosts: Awaited<ReturnType<typeof fetchRecentPosts>> = [];
 
-  if (token) {
-    [telegramPost, recentPosts] = await Promise.all([
-      fetchLatestPost(token, "@I0_12_djs"),
-      fetchRecentPosts(token, "@I0_12_djs"),
-    ]);
-  }
+  [telegramPost, recentPosts] = await Promise.all([
+    fetchLatestPost(),
+    fetchRecentPosts(),
+  ]);
+
+  const upcomingEvents = getUpcomingEventsLimited(3);
 
   return (
     <>
@@ -134,85 +134,67 @@ export default async function Home() {
           <h2 className="mt-2 text-4xl font-black tracking-tighter sm:text-5xl">АФИША</h2>
           <p className="mt-2 text-xs font-semibold tracking-[0.2em] text-muted/60">ПРЕДСТОЯЩИЕ СОБЫТИЯ</p>
         </div>
-        <div className="mt-10 space-y-10">
-          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
-            <div className="w-48 shrink-0">
-              <Image
-                src="/dizengof-poster.jpg"
-                alt="DJ ENDE В DIZENGOF/99"
-                width={1024}
-                height={1280}
-                className="border border-accent/20 object-cover"
-              />
-            </div>
-            <div className="mt-6 text-center lg:mt-0 lg:text-left">
-              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 10 ИЮЛЯ</span>
-              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">DJ ENDE</h2>
-              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">DIZENGOF/99</p>
-              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
-              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">БАСКОВ ПЕР. 31, СПБ</p>
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ВХОД СВОБОДНЫЙ</span>
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">19:30</span>
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">TECH HOUSE</span>
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ACID HOUSE</span>
+        {upcomingEvents.length > 0 && (
+          <div className="mt-10 space-y-10">
+            {upcomingEvents.map((event) => (
+              <div key={event.id} className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+                <div className="w-48 shrink-0">
+                  <Image
+                    src={event.poster}
+                    alt={event.posterAlt}
+                    width={event.posterWidth}
+                    height={event.posterHeight}
+                    className="border border-accent/20 object-cover"
+                  />
+                </div>
+                <div className="mt-6 text-center lg:mt-0 lg:text-left">
+                  <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● {event.dateLabel}</span>
+                  <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">{event.title}</h2>
+                  {event.venue && <p className="text-sm font-bold tracking-[0.15em] text-accent/80">{event.venue}</p>}
+                  <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+                  {event.location && <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">{event.location}</p>}
+                  {(event.time && !event.location) && <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">{event.time}</p>}
+                  {event.description && <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">{event.description}</p>}
+                  {event.descriptionLong && (
+                    <p className="mt-4 max-w-xl text-[10px] font-semibold leading-relaxed tracking-[0.2em] text-muted">
+                      {event.descriptionLong.map((line, i) => (
+                        <span key={i}>{line}<br /></span>
+                      ))}
+                    </p>
+                  )}
+                  {event.artists && event.artists.length > 0 && (
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                      {event.artists.map((artist, i) => (
+                        <span key={artist.name}>
+                          {i > 0 && <span className="text-[9px] text-muted/40"> / </span>}
+                          {artist.url ? (
+                            <a href={artist.url} target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold tracking-[0.2em] text-accent/70 transition-colors hover:text-accent">{artist.name}</a>
+                          ) : (
+                            <span className="text-[9px] font-bold tracking-[0.2em] text-accent/70">{artist.name}</span>
+                          )}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                    {event.isFree && <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ВХОД СВОБОДНЫЙ</span>}
+                    {(event.time && event.location) && <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">{event.time}</span>}
+                    {event.tags?.map((tag) => (
+                      <span key={tag} className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">{tag}</span>
+                    ))}
+                  </div>
+                  {event.links && (
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                      {event.links.map((link) => (
+                        <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="border border-accent/30 px-4 py-2 text-[10px] font-bold tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-black">{link.label}</a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
-            <div className="w-48 shrink-0">
-              <Image
-                src="/poster-krugi.jpg"
-                alt="ВЕЙК-ПАРК КРУГИ НА ВОДЕ"
-                width={600}
-                height={800}
-                className="border border-accent/20 object-cover"
-              />
-            </div>
-            <div className="mt-6 text-center lg:mt-0 lg:text-left">
-              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 11 ИЮЛЯ</span>
-              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">ВЕЙК-ПАРК «КРУГИ НА ВОДЕ»</h2>
-              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">18:00–23:00</p>
-              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
-              <p className="mt-4 text-[10px] font-semibold tracking-[0.2em] text-muted">РЖЕВСКАЯ УЛ. 2, ЛИТЕРА А, СПБ</p>
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-                <span className="text-[9px] font-bold tracking-[0.2em] text-accent/70">DEAD RIPPLE</span>
-                <span className="text-[9px] text-muted/40">/</span>
-                <span className="text-[9px] font-bold tracking-[0.2em] text-accent/70">SHAWTY</span>
-              </div>
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">LIVE DJ SET</span>
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">HOUSE</span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
-            <div className="w-48 shrink-0">
-              <Image
-                src="/upcoming-lupus-fest.jpg"
-                alt="ЛЮПУС-ФЕСТ 2026"
-                width={1080}
-                height={1350}
-                className="border border-accent/20 object-cover"
-              />
-            </div>
-            <div className="mt-6 text-center lg:mt-0 lg:text-left">
-              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 7–9 АВГУСТА</span>
-              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">ЛЮПУС-ФЕСТ 2026</h2>
-              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">ЛЕНИНГРАДСКАЯ ОБЛАСТЬ</p>
-              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
-              <p className="mt-4 max-w-xl text-[10px] font-semibold leading-relaxed tracking-[0.2em] text-muted">
-                ФЕСТИВАЛЬ О ТВОРЧЕСТВЕ, О СВОБОДЕ, О ВОЗМОЖНОСТЯХ И О МУЗЫКЕ.<br />
-                О ТОМ, ЧТО МОЖЕТ СДЕЛАТЬ КАЖДЫЙ ИЗ ВАС, СТАВ ЧАСТЬЮ ЧЕГО-ТО БОЛЬШЕГО.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ФЕСТИВАЛЬ</span>
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ТВОРЧЕСТВО</span>
-                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">МУЗЫКА</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        )}
         <div className="mt-10 text-center">
           <Link
             href="/afisha"
