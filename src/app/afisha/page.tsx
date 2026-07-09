@@ -47,6 +47,45 @@ export default function Afisha() {
             </div>
           </div>
 
+          {/* LAST RESORT / 10 ИЮЛЯ */}
+          <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
+            <div className="w-48 shrink-0">
+              <Image
+                src="/poster-last-resort.webp"
+                alt="LAST RESORT"
+                width={1024}
+                height={1280}
+                className="border border-accent/20 object-cover"
+              />
+            </div>
+            <div className="mt-6 text-center lg:mt-0 lg:text-left">
+              <span className="text-[9px] font-semibold tracking-[0.25em] text-accent/60">● 10 ИЮЛЯ</span>
+              <h2 className="mt-2 text-3xl font-black tracking-tighter sm:text-4xl">LAST RESORT</h2>
+              <p className="text-sm font-bold tracking-[0.15em] text-accent/80">SECOND STAGE</p>
+              <div className="mx-auto mt-4 h-px w-16 bg-accent/40 lg:mx-0" />
+              <p className="mt-4 text-[10px] font-semibold leading-relaxed tracking-[0.2em] text-muted">
+                НОВЫЙ УЧАСТНИК 10/12 — OLEG aka <span className="text-accent">MRFLESH</span> С ЛАЙВ-ПЕРФОМАНСОМ.<br />
+                НА WITCH HOUSE СЦЕНЕ — <span className="text-accent">DEADRIPPLE</span> С ТЁМНОЙ СТОРОНОЙ ЗВУЧАНИЯ.<br />
+                ГОСТЬ ВЕЧЕРА — <span className="text-accent">ESENTRICA</span> (HIP-HOP / ELECTRO / TECHNO / DUBSTEP).
+              </p>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <a href="https://t.me/mrfleesh" target="_blank" rel="noopener noreferrer" className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent transition-colors hover:border-accent/60">MRFLESH</a>
+                <a href="https://t.me/urtears" target="_blank" rel="noopener noreferrer" className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent transition-colors hover:border-accent/60">DEADRIPPLE</a>
+                <a href="https://t.me/Esentrica" target="_blank" rel="noopener noreferrer" className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent transition-colors hover:border-accent/60">ESENTRICA</a>
+              </div>
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">WITCH HOUSE</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">ELECTRO-PUNK</span>
+                <span className="border border-accent/30 px-3 py-1 text-[9px] font-bold tracking-[0.2em] text-accent">BREAKBEAT</span>
+              </div>
+              <div className="mt-4">
+                <a href="https://spb.qtickets.events/240656-last-resort" target="_blank" rel="noopener noreferrer" className="inline-block border border-accent/30 px-4 py-2 text-[10px] font-bold tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-black">
+                  БИЛЕТЫ
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* ВЕЙК-ПАРК КРУГИ НА ВОДЕ / 11 ИЮЛЯ */}
           <div className="flex flex-col items-center border border-accent/10 bg-card/50 p-8 lg:flex-row lg:gap-12">
             <div className="w-48 shrink-0">
