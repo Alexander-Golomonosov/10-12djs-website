@@ -129,7 +129,7 @@ export default function School() {
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="https://t.me/I0_12_djs"
+            href="https://t.me/fckngd1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-accent bg-accent px-10 py-4 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover"
