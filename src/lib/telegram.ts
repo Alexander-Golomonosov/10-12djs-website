@@ -1,3 +1,5 @@
+import * as cheerio from "cheerio";
+
 export type TelegramPost = {
   title: string;
   text: string;
@@ -8,64 +10,75 @@ export type TelegramPost = {
   slug: string;
 };
 
-function formatPost(p: any): TelegramPost {
-  const text = p.text || p.caption || "";
-  const lines = text.split("\n");
-  const title = lines[0].slice(0, 60) || "Новый пост";
-  return {
-    title,
-    text,
-    excerpt: lines.slice(1).join(" ").trim().slice(0, 120) || title.slice(0, 120),
-    date: new Date(p.date * 1000).toLocaleDateString("ru-RU", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    }).toUpperCase(),
-    dateRaw: p.date,
-    messageId: p.message_id,
-    slug: `tg-${p.message_id}`,
-  };
+function parseTelegramHtml(html: string): TelegramPost[] {
+  const $ = cheerio.load(html);
+  const posts: TelegramPost[] = [];
+
+  $(".tgme_widget_message_wrap").each((_, wrap) => {
+    const msg = $(wrap).find(".tgme_widget_message").first();
+    if (!msg.length) return;
+
+    const postAttr = msg.attr("data-post") || "";
+    const messageId = parseInt(postAttr.split("/").pop() || "0", 10);
+    if (!messageId) return;
+
+    const textEl = msg.find(".tgme_widget_message_text").first();
+    const text = textEl.length ? textEl.text().trim() : "";
+
+    const timeEl = msg.find("time").first();
+    const dateRaw = timeEl.length
+      ? new Date(timeEl.attr("datetime") || "").getTime() / 1000
+      : 0;
+
+    function truncateAtWord(s: string, max: number): string {
+      if (s.length <= max) return s;
+      const trimmed = s.slice(0, max + 1).replace(/\s+\S*$/, "");
+      return (trimmed || s.slice(0, max)) + "...";
+    }
+
+    const lines = text.split("\n").filter(Boolean);
+    const rawTitle = lines[0] || "Новый пост";
+    const title = truncateAtWord(rawTitle, 60);
+    const body = lines.slice(1).join(" ").trim();
+
+    posts.push({
+      messageId,
+      title,
+      text,
+      excerpt: truncateAtWord(body || title, 120),
+      date: dateRaw
+        ? new Date(dateRaw * 1000).toLocaleDateString("ru-RU", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          }).toUpperCase()
+        : "",
+      dateRaw,
+      slug: `tg-${messageId}`,
+    });
+  });
+
+  return posts.sort((a, b) => b.dateRaw - a.dateRaw);
 }
 
-export async function fetchLatestPost(token: string, channelUsername: string): Promise<TelegramPost | null> {
-  const res = await fetch(
-    `https://api.telegram.org/bot${token}/getUpdates?offset=-1&timeout=5`,
-    { cache: "no-store" }
-  );
-
-  if (!res.ok) return null;
-
-  const data = await res.json();
-  if (!data.ok || !data.result?.length) return null;
-
-  const posts = data.result
-    .filter((u: any) => u.channel_post)
-    .map((u: any) => u.channel_post)
-    .filter((p: any) => p.chat?.username === channelUsername.replace("@", ""))
-    .sort((a: any, b: any) => b.date - a.date);
-
-  if (!posts.length) return null;
-
-  return formatPost(posts[0]);
+export async function fetchLatestPost(): Promise<TelegramPost | null> {
+  try {
+    const res = await fetch("https://t.me/s/I0_12_djs", { next: { revalidate: 30 } });
+    if (!res.ok) return null;
+    const posts = parseTelegramHtml(await res.text());
+    return posts[0] || null;
+  } catch {
+    return null;
+  }
 }
 
-export async function fetchRecentPosts(token: string, channelUsername: string, limit = 10): Promise<TelegramPost[]> {
-  const res = await fetch(
-    `https://api.telegram.org/bot${token}/getUpdates?timeout=5`,
-    { cache: "no-store" }
-  );
-
-  if (!res.ok) return [];
-
-  const data = await res.json();
-  if (!data.ok || !data.result?.length) return [];
-
-  const posts = data.result
-    .filter((u: any) => u.channel_post)
-    .map((u: any) => u.channel_post)
-    .filter((p: any) => p.chat?.username === channelUsername.replace("@", ""))
-    .sort((a: any, b: any) => b.date - a.date)
-    .slice(0, limit);
-
-  return posts.map(formatPost);
+export async function fetchRecentPosts(limit = 10): Promise<TelegramPost[]> {
+  try {
+    const res = await fetch("https://t.me/s/I0_12_djs", { next: { revalidate: 30 } });
+    if (!res.ok) return [];
+    const posts = parseTelegramHtml(await res.text());
+    return posts.slice(0, limit);
+  } catch {
+    return [];
+  }
 }

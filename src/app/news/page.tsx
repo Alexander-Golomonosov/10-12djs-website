@@ -8,16 +8,13 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function News() {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
   let telegramPost: Awaited<ReturnType<typeof fetchLatestPost>> | null = null;
   let recentPosts: Awaited<ReturnType<typeof fetchRecentPosts>> = [];
 
-  if (token) {
-    [telegramPost, recentPosts] = await Promise.all([
-      fetchLatestPost(token, "@I0_12_djs"),
-      fetchRecentPosts(token, "@I0_12_djs"),
-    ]);
-  }
+  [telegramPost, recentPosts] = await Promise.all([
+    fetchLatestPost(),
+    fetchRecentPosts(),
+  ]);
 
   return (
     <div className="relative mx-auto max-w-6xl px-4 py-24">

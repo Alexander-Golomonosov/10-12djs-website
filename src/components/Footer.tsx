@@ -11,7 +11,6 @@ export default function Footer() {
             { name: "VK", url: "https://vk.com/10djs12" },
             { name: "YOUTUBE", url: "https://www.youtube.com/@1012djs" },
             { name: "@fckngd1", url: "https://t.me/fckngd1" },
-            { name: "@imenyuai", url: "https://t.me/imenyuai" },
           ].map((s) => (
             <a
               key={s.name}

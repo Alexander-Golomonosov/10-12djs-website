@@ -26,12 +26,22 @@ export default function Contact() {
           <div>
             <h3 className="text-sm font-bold tracking-wider">СВЯЗЬ</h3>
             <div className="mt-2 h-px w-12 bg-accent" />
-            <a
-              href="mailto:10djs12_fckngd1@vk.com"
-              className="mt-4 inline-block text-xs font-semibold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
-            >
-              10DJS12_FCKNGD1@VK.COM
-            </a>
+            <div className="mt-4 flex flex-col gap-3">
+              <a
+                href="https://t.me/I0_12_djs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
+              >
+                НАПИСАТЬ В TELEGRAM →
+              </a>
+              <a
+                href="mailto:10djs12_fckngd1@vk.com"
+                className="inline-block text-xs font-semibold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
+              >
+                10DJS12_FCKNGD1@VK.COM
+              </a>
+            </div>
           </div>
           <div>
             <h3 className="text-sm font-bold tracking-wider">СОЦСЕТИ</h3>

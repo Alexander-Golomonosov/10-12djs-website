@@ -28,6 +28,7 @@ export default function RootLayout({
           __html: `
 var _tmr = window._tmr || (window._tmr = []);
 _tmr.push({id: "3778811", type: "pageView", start: (new Date()).getTime()});
+_tmr.push({type: "reachGoal", id: "visit"});
 (function (d, w, id) {
   if (d.getElementById(id)) return;
   var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
@@ -35,6 +36,19 @@ _tmr.push({id: "3778811", type: "pageView", start: (new Date()).getTime()});
   var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
   if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
 })(document, window, "tmr-code");
+
+(function(d, w, c) {
+  (w[c] = w[c] || []).push(function() {
+    try {
+      w.VK = w.VK || {};
+      w.VK.Pixel = new VK.Pixel("3778811");
+      w.VK.Pixel.Event("ViewContent");
+    } catch(e) {}
+  });
+  var s = d.createElement("script");
+  s.src = "https://vk.com/js/pixel.js";
+  d.head.appendChild(s);
+})(document, window, "vkAsyncInit");
           `
         }} />
         <noscript>

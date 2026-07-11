@@ -83,7 +83,7 @@ const events: EventItem[] = [
     time: "18:00–23:00",
     tags: ["LIVE DJ SET", "HOUSE"],
     artists: [
-      { name: "DEAD RIPPLE" },
+      { name: "DEADRIPPLE" },
       { name: "MrFlesh" },
     ],
   },

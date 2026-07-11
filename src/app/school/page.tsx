@@ -127,12 +127,22 @@ export default function School() {
         <p className="mt-2 text-xs font-semibold tracking-wider text-muted">
           ПИШИ НАМ, РАССКАЖЕМ ПОДРОБНОСТИ
         </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-block border-2 border-accent bg-accent px-10 py-4 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover"
-        >
-          СВЯЗАТЬСЯ
-        </Link>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="https://t.me/I0_12_djs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border-2 border-accent bg-accent px-10 py-4 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover"
+          >
+            ЗАПИСАТЬСЯ В TG →
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-block border-2 border-border/40 px-10 py-4 text-xs font-bold tracking-[0.2em] text-muted transition-all hover:border-accent/60 hover:text-foreground"
+          >
+            ИЛИ ЧЕРЕЗ ФОРМУ
+          </Link>
+        </div>
       </div>
     </div>
   );

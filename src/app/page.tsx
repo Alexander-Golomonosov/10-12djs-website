@@ -1,18 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { fetchLatestPost, fetchRecentPosts } from "@/lib/telegram";
+import { fetchRecentPosts } from "@/lib/telegram";
 import { getUpcomingEventsLimited } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  let telegramPost: Awaited<ReturnType<typeof fetchLatestPost>> | null = null;
-  let recentPosts: Awaited<ReturnType<typeof fetchRecentPosts>> = [];
-
-  [telegramPost, recentPosts] = await Promise.all([
-    fetchLatestPost(),
-    fetchRecentPosts(),
-  ]);
+  const recentPosts = await fetchRecentPosts(3);
 
   const upcomingEvents = getUpcomingEventsLimited(3);
 
@@ -78,6 +72,12 @@ export default async function Home() {
               className="group relative border-2 border-accent bg-accent px-12 py-5 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover hover:shadow-[0_0_60px_rgba(255,66,66,0.3)]"
             >
               <span className="relative z-10">СВЯЗАТЬСЯ</span>
+            </Link>
+            <Link
+              href="/school"
+              className="group relative border-2 border-accent/50 px-12 py-5 text-xs font-bold tracking-[0.2em] text-accent transition-all hover:border-accent hover:bg-accent/10 hover:shadow-[0_0_40px_rgba(255,66,66,0.15)]"
+            >
+              ХОЧУ СТАТЬ ДИДЖЕЕМ →
             </Link>
             <Link
               href="/afisha"
@@ -220,20 +220,6 @@ export default async function Home() {
             ВСЕ СОБЫТИЯ →
           </Link>
         </div>
-        {telegramPost && (
-          <a
-            href={`https://t.me/I0_12_djs/${telegramPost.messageId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 flex items-center justify-between border-2 border-accent/30 bg-accent/5 p-5 transition-all hover:border-accent"
-          >
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-accent">📢 ПОСЛЕДНИЙ ПОСТ В TELEGRAM</span>
-              <p className="mt-2 text-xs font-semibold tracking-wider text-foreground">{telegramPost.title}</p>
-            </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] text-accent">ОТКРЫТЬ →</span>
-          </a>
-        )}
         <div className="mt-10 grid gap-0 sm:grid-cols-2 lg:grid-cols-3">
           {recentPosts.length > 0 ? recentPosts.map((item) => (
             <a
