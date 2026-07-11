@@ -36,6 +36,14 @@ export default function Contact() {
                 НАПИСАТЬ В TELEGRAM →
               </a>
               <a
+                href="https://t.me/fuckengod"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-xs font-semibold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
+              >
+                @FCKNGD1
+              </a>
+              <a
                 href="mailto:10djs12_fckngd1@vk.com"
                 className="inline-block text-xs font-semibold tracking-[0.2em] text-accent transition-colors hover:text-accent-hover"
               >

@@ -66,7 +66,7 @@ export default async function Home() {
             ТАНЦПОЛ — НАША ТЕРРИТОРИЯ.
           </p>
 
-          <div className="mt-16 flex items-center justify-center gap-6 sm:gap-10">
+          <div className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
             <Link
               href="/contact"
               className="group relative border-2 border-accent bg-accent px-12 py-5 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover hover:shadow-[0_0_60px_rgba(255,66,66,0.3)]"

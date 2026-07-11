@@ -10,7 +10,7 @@ export default function Footer() {
             { name: "TELEGRAM", url: "https://t.me/I0_12_djs" },
             { name: "VK", url: "https://vk.com/10djs12" },
             { name: "YOUTUBE", url: "https://www.youtube.com/@1012djs" },
-            { name: "@fckngd1", url: "https://t.me/fckngd1" },
+            { name: "@fckngd1", url: "https://t.me/fuckengod" },
           ].map((s) => (
             <a
               key={s.name}
