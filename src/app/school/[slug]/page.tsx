@@ -3,9 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "10/12DJ'S",
-};
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const dir = directions.find((d) => d.slug === slug);
+  if (!dir) return { title: "10/12DJ'S" };
+  return { title: `${dir.title} | 10/12DJ'S` };
+}
 
 const directions = [
   {
@@ -88,12 +91,13 @@ const directions = [
   },
 ];
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return directions.map((d) => ({ slug: d.slug }));
 }
 
-export default function SchoolDirection({ params }: { params: { slug: string } }) {
-  const dir = directions.find((d) => d.slug === params.slug);
+export default async function SchoolDirection({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const dir = directions.find((d) => d.slug === slug);
   if (!dir) notFound();
 
   return (
