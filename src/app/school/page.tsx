@@ -8,36 +8,42 @@ export const metadata: Metadata = {
 
 const directions = [
   {
+    slug: "djing",
     title: "ДИДЖЕИНГ",
-    desc: "ОБУЧЕНИЕ В ПОЛЕВЫХ УСЛОВИЯХ: ЛОФТЫ, БАРЫ, КЛУБЫ. МИНИМУМ ТЕОРИИ — МАКСИМУМ ПРАКТИКИ. КОМАНДА 10/12 — ТВОЁ НОВОЕ КОМЬЮНИТИ.",
-    tags: ["ПРАКТИКА", "КОМАНДА", "КЛУБЫ"],
+    desc: "ТУСОВКА, А НЕ ШКОЛА. ЛОФТЫ, БАРЫ, КЛУБЫ. С ПЕРВОГО ЗАНЯТИЯ ЗА ПУЛЬТОМ.",
+    tags: ["ТУСОВКА", "ПРАКТИКА", "КЛУБЫ"],
     image: "/school-djing.jpg",
   },
   {
+    slug: "music-production",
     title: "НАПИСАНИЕ МУЗЫКИ",
     desc: "СОЗДАНИЕ ТРЕКОВ В ABLETON / FL STUDIO. ТЕОРИЯ МУЗЫКИ, СИНТЕЗ, АРРАНЖИРОВКА.",
     tags: ["ABLETON", "FL STUDIO", "АРРАНЖИРОВКА"],
     image: "/school-music.jpg",
   },
   {
+    slug: "street-art",
     title: "СТРИТ-АРТ",
     desc: "ГРАФФИТИ, ТРАФАРЕТЫ, МУРАЛЫ. ИСТОРИЯ УЛИЧНОГО ИСКУССТВА И ПРАКТИКА.",
     tags: ["ГРАФФИТИ", "ТРАФАРЕТЫ", "МУРАЛЫ"],
     image: "/school-streetart.jpg",
   },
   {
+    slug: "tattoo",
     title: "ТАТУ",
     desc: "ОСНОВЫ ТАТУИРОВКИ: БЕЗОПАСНОСТЬ, СТИЛИ, ПОСТРОЕНИЕ ЭСКИЗОВ, ПРАКТИКА НА НАКЛАДНЫХ.",
     tags: ["БЕЗОПАСНОСТЬ", "ЭСКИЗЫ", "ПРАКТИКА"],
     image: "/school-tattoo.jpg",
   },
   {
+    slug: "techno-fitness",
     title: "ТЕХНО-ФИТНЕС",
     desc: "ТРЕНИРОВКИ ПОД ЭЛЕКТРОННУЮ МУЗЫКУ. ВЫНОСЛИВОСТЬ, СИЛА, РИТМ.",
     tags: ["ВЫНОСЛИВОСТЬ", "СИЛА", "РИТМ"],
     image: "/school-techfit.jpg",
   },
   {
+    slug: "film-club",
     title: "КИНО-КЛУБ",
     desc: "ПРОСМОТРЫ И ОБСУЖДЕНИЯ ДОКУМЕНТАЛЬНЫХ ФИЛЬМОВ О МУЗЫКЕ И КУЛЬТУРЕ.",
     tags: ["ДОКУМЕНТАЛЬНОЕ", "МУЗЫКА", "КУЛЬТУРА"],
@@ -84,10 +90,10 @@ export default function School() {
 
       <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {directions.map((d) => (
-          <div key={d.title} className="flex flex-col border border-accent/10 bg-card/50">
-            <div className="aspect-[3/4] flex items-center justify-center border-b border-accent/10 bg-card/80">
+          <Link key={d.title} href={`/school/${d.slug}`} className="group flex flex-col border border-accent/10 bg-card/50 transition-all hover:border-accent/40 hover:bg-card-hover">
+            <div className="aspect-[3/4] flex items-center justify-center border-b border-accent/10 bg-card/80 overflow-hidden">
               {d.image ? (
-                <Image src={d.image} alt={d.title} width={400} height={533} className="h-full w-full object-cover" />
+                <Image src={d.image} alt={d.title} width={400} height={533} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               ) : (
                 <div className="flex flex-col items-center gap-3 p-8 text-center">
                   <span className="text-4xl opacity-20">◈</span>
@@ -98,7 +104,7 @@ export default function School() {
             <div className="flex flex-1 flex-col p-6">
               <div>
                 <span className="text-[10px] font-semibold tracking-[0.25em] text-accent/60">НАПРАВЛЕНИЕ</span>
-                <h2 className="mt-1 text-lg font-black tracking-tighter">{d.title}</h2>
+                <h2 className="mt-1 text-lg font-black tracking-tighter group-hover:text-accent transition-colors">{d.title}</h2>
               </div>
               <div className="mt-3 h-px w-full bg-accent/20" />
               <p className="mt-3 text-[10px] font-semibold leading-relaxed tracking-wider text-muted">
@@ -112,7 +118,7 @@ export default function School() {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

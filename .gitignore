@@ -42,3 +42,5 @@ next-env.d.ts
 
 .vercel
 .env*
+.root-pw*
+ecosystem.config.cjs

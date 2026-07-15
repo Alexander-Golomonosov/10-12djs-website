@@ -43,6 +43,7 @@ _tmr.push({type: "reachGoal", id: "visit"});
       w.VK = w.VK || {};
       w.VK.Pixel = new VK.Pixel("3778811");
       w.VK.Pixel.Event("ViewContent");
+      w.VK.Pixel.Event("reachGoal", "visit");
     } catch(e) {}
   });
   var s = d.createElement("script");
