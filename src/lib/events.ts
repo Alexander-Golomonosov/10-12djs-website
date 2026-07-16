@@ -88,6 +88,28 @@ const events: EventItem[] = [
     ],
   },
   {
+    id: "wake-park-krugi-18",
+    title: "ВЕЙК-ПАРК «КРУГИ НА ВОДЕ»",
+    dateLabel: "18 ИЮЛЯ",
+    dateStart: new Date("2026-07-18"),
+    poster: "/poster-krugi-18.png",
+    posterAlt: "ВЕЙК-ПАРК КРУГИ НА ВОДЕ — 18 ИЮЛЯ",
+    posterWidth: 1080,
+    posterHeight: 1350,
+    location: "РЖЕВСКАЯ УЛ. 2, ЛИТЕРА А, СПБ",
+    time: "17:00–23:00",
+    descriptionLong: [
+      "FCKNGD1 И XONIAD — LIVE DJ SET НА ВОДЕ.",
+      "HOUSE / TECH HOUSE / AFRO HOUSE — ВЕСЬ ДЕНЬ МУЗЫКИ.",
+    ],
+    tags: ["LIVE DJ SET", "HOUSE", "TECH HOUSE"],
+    artists: [
+      { name: "fckngd1" },
+      { name: "XONIAD" },
+    ],
+    isFree: true,
+  },
+  {
     id: "ptichya-lichnost",
     title: "РЕЙВ В ПТИЧЬЕЙ ЛИЧНОСТИ",
     dateLabel: "1 АВГУСТА",
