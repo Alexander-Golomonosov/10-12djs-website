@@ -1,4 +1,8 @@
 <!-- BEGIN:nextjs-agent-rules -->
+## VPS Management
+- **FirstVDS panel:** https://my.firstvds.ru/ — для перезагрузки сервера
+- **SSH:** `ssh -i ~/.ssh/vps_key root@a0djs12fckngd1.fvds.ru`
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
