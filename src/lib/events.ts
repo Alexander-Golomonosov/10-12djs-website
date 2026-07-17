@@ -100,7 +100,7 @@ const events: EventItem[] = [
     time: "17:00–23:00",
     descriptionLong: [
       "FCKNGD1 И DJ ENDE — LIVE DJ SET НА ВОДЕ.",
-      "HOUSE / TECH HOUSE / AFRO HOUSE — ВЕСЬ ДЕНЬ МУЗЫКИ.",
+      "ХАУС МУЗЫКА С 17:00 ДО ЗАКАТА.",
     ],
     tags: ["LIVE DJ SET", "HOUSE", "TECH HOUSE"],
     artists: [
