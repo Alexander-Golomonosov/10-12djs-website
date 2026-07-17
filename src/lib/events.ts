@@ -99,13 +99,13 @@ const events: EventItem[] = [
     location: "РЖЕВСКАЯ УЛ. 2, ЛИТЕРА А, СПБ",
     time: "17:00–23:00",
     descriptionLong: [
-      "FCKNGD1 И XONIAD — LIVE DJ SET НА ВОДЕ.",
+      "FCKNGD1 И DJ ENDE — LIVE DJ SET НА ВОДЕ.",
       "HOUSE / TECH HOUSE / AFRO HOUSE — ВЕСЬ ДЕНЬ МУЗЫКИ.",
     ],
     tags: ["LIVE DJ SET", "HOUSE", "TECH HOUSE"],
     artists: [
       { name: "fckngd1" },
-      { name: "XONIAD" },
+      { name: "DJ ENDE" },
     ],
     isFree: true,
   },
