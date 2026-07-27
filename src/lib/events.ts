@@ -127,8 +127,8 @@ const events: EventItem[] = [
   {
     id: "febb-dizengof-31",
     title: "FEBB TUFOE",
-    dateLabel: "31 АВГУСТА",
-    dateStart: new Date("2026-08-31"),
+    dateLabel: "31 ИЮЛЯ",
+    dateStart: new Date("2026-07-31"),
     poster: "/poster-febb-dizengof-31.jpg",
     posterAlt: "FEBB TUFOE В DIZENGOF/99",
     posterWidth: 1024,
