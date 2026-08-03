@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 function EventCard({ event, compact }: { event: EventItem; compact?: boolean }) {
   return (
-    <div className={`flex flex-col items-center border border-accent/10 bg-card/50 ${compact ? "p-6" : "p-8"} lg:flex-row lg:gap-${compact ? "10" : "12"}`}>
+    <div className={`flex flex-col items-center border border-accent/10 bg-card/50 ${compact ? "p-6 lg:gap-10" : "p-8 lg:gap-12"} lg:flex-row`}>
       <div className="w-48 shrink-0">
         <Image
           src={event.poster}

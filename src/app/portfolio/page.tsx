@@ -43,7 +43,7 @@ const residents = [
   "SHAWTY",
   "CAIMAN",
   "MRFLESH",
-  "TEMP4D",
+  "EQUICUE",
 ];
 
 export default function Portfolio() {

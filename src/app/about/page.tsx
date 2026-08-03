@@ -19,7 +19,7 @@ const artists = [
     photo: "/artists/xoniad.jpg",
   },
   {
-    nick: "TEMP4D",
+    nick: "EQUICUE",
     role: "ДИДЖЕЙ, DRUM&BASS / HIP-HOP",
     bio: "ВО ВСЕХ ПОДЖАНРАХ ДРАМ-Н-БЕЙСА И ХИП-ХОПА. МАСТЕР ТЯЖЁЛЫХ БИТОВ И ХАРИЗМА.",
     photo: "/artists/temp4d.jpg",
