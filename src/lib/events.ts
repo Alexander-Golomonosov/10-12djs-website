@@ -190,12 +190,13 @@ const events: EventItem[] = [
     posterAlt: "ЛЮПУС-ФЕСТ 2026",
     posterWidth: 1080,
     posterHeight: 1350,
-    venue: "ЛЕНИНГРАДСКАЯ ОБЛАСТЬ",
+    venue: "ТУРКЛУБ «ПАРУС» · ПРИОЗЕРСКИЙ РАЙОН",
     descriptionLong: [
       "ФЕСТИВАЛЬ О ТВОРЧЕСТВЕ, О СВОБОДЕ, О ВОЗМОЖНОСТЯХ И О МУЗЫКЕ.",
       "О ТОМ, ЧТО МОЖЕТ СДЕЛАТЬ КАЖДЫЙ ИЗ ВАС, СТАВ ЧАСТЬЮ ЧЕГО-ТО БОЛЬШЕГО.",
     ],
     tags: ["ФЕСТИВАЛЬ", "ТВОРЧЕСТВО", "МУЗЫКА"],
+    links: [{ label: "КАРТА", url: "https://yandex.ru/maps/org/parus/90231195621?si=yxua9hbcjcfmcxau4n9bpayqkr" }],
   },
   {
     id: "iddqd-rave",
