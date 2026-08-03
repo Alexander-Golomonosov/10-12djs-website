@@ -155,6 +155,18 @@ const events: EventItem[] = [
     isFree: true,
   },
   {
+    id: "bezdna-15",
+    title: "БАР БЕЗДНА",
+    dateLabel: "15 АВГУСТА",
+    dateStart: new Date("2026-08-15"),
+    poster: "/placeholder-poster.svg",
+    posterAlt: "БАР БЕЗДНА",
+    posterWidth: 600,
+    posterHeight: 800,
+    venue: "БАР БЕЗДНА",
+    time: "20:00",
+  },
+  {
     id: "lupus-preparty",
     title: "LUPUS FEST PRE-PARTY",
     dateLabel: "25 ИЮЛЯ",
