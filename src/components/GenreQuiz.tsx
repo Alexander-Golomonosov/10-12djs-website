@@ -125,6 +125,27 @@ export default function GenreQuiz() {
     const shareUrl = "https://1012djs.ru/quiz/genre";
     const shareText = `Я ПРОШЁЛ АУДИО-ТЕСТ ОТ 10/12DJ'S И УГАДАЛ ${score} ИЗ ${QUESTIONS.length} ЖАНРОВ! ПРОВЕРЬ СВОИ УШИ: ${shareUrl}`;
 
+    const cta =
+      score === QUESTIONS.length
+        ? {
+            title: "ТЫ СУПЕР МОЛОДЕЦ, ВСЁ ЗНАЕШЬ.",
+            text: "МЫ ДАВНО ИЩЕМ ТАКИХ ДИДЖЕЕВ. ПРИХОДИ К НАМ — СОЗДАДИМ МУЗЫКУ, КОТОРУЮ ТЫ ТАК ХОРОШО ЧУВСТВУЕШЬ.",
+          }
+        : score >= 3
+          ? {
+              title: "ОТЛИЧНЫЙ СЛУХ, НО ЕСТЬ КУДА РАСТИ.",
+              text: "ПОДТЯНИ ТЕОРИЮ С НАМИ — НА УРОКАХ ДИДЖЕИНГА РАЗБЕРЁМ ЖАНРЫ ДО МЕЛЬЧАЙШИХ БАСОВ.",
+            }
+          : score >= 1
+            ? {
+                title: "ТЕОРИЮ НАДО ПОДТЯНУТЬ.",
+                text: "С НАМИ ЭТО БЫСТРО. ПРИХОДИ НА ПЕРВЫЙ УРОК — УЖЕ ЧЕРЕЗ НЕДЕЛЮ БУДЕШЬ РАЗЛИЧАТЬ ЖАНРЫ С ЗАКРЫТЫМИ ГЛАЗАМИ.",
+              }
+            : {
+                title: "ПОРА УЧИТЬСЯ СЛУШАТЬ.",
+                text: "С НАМИ ТЫ РАЗБЕРЁШЬСЯ В ЖАНРАХ — ДИДЖЕИНГ С НУЛЯ И НАСТОЯЩИЙ АНДЕГРАУНД ВКУС.",
+              };
+
     return (
       <div className="mx-auto w-full max-w-2xl border-2 border-accent/20 bg-card p-8 sm:p-12">
         <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">
@@ -202,6 +223,25 @@ export default function GenreQuiz() {
               VK
             </a>
           </div>
+        </div>
+        <div className="mt-10 border-2 border-accent/30 bg-card/60 p-8">
+          <span className="text-[10px] font-bold tracking-[0.3em] text-accent/60">
+            ● СЛЕДУЮЩИЙ ШАГ
+          </span>
+          <h3 className="mt-4 text-xl font-black tracking-tighter sm:text-2xl">
+            {cta.title}
+          </h3>
+          <p className="mt-3 text-xs font-semibold leading-relaxed tracking-wider text-muted/80">
+            {cta.text}
+          </p>
+          <Link
+            href="https://t.me/fuckengod"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block border-2 border-accent bg-accent px-8 py-4 text-xs font-bold tracking-[0.2em] text-white transition-all hover:bg-accent-hover"
+          >
+            ЗАПИСАТЬСЯ НА УРОК →
+          </Link>
         </div>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <button
