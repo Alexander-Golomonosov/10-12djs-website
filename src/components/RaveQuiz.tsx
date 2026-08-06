@@ -187,7 +187,7 @@ export default function RaveQuiz() {
     for (const a of answers) count[a]++;
     const result = getResult(count);
     const data = resultsData[result];
-    const shareUrl = "https://1012djs.ru/quiz";
+    const shareUrl = "https://1012djs.ru/quiz/rave";
     const shareText = `Я ПРОШЁЛ РЕЙВ-ТЕСТ ОТ 10/12DJ'S И ПОЛУЧИЛ: ${data.title}! ПРОЙДИ ЕГО ТЫ: ${shareUrl}`;
 
     return (

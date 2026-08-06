@@ -7,7 +7,7 @@ const navLinks = [
   { href: "/afisha", label: "Афиша" },
   { href: "/gallery", label: "Галерея" },
   { href: "/portfolio", label: "Портфолио" },
-  { href: "/quiz", label: "Тест" },
+  { href: "/quiz", label: "Тесты" },
   { href: "/school", label: "Школа" },
   { href: "/merch", label: "Мерч" },
   { href: "/contact", label: "Контакты" },
