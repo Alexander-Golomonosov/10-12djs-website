@@ -20,36 +20,42 @@ export const GENRES: Record<GenreId, GenreDef> = {
     name: "ТЕХНО",
     hint: "РОВНЫЙ 4/4 КИК, ОФФБИТ-ХЭТЫ, ГИПНОТИЧЕСКИЙ БАС — 128–140 BPM",
     bpm: 135,
+    src: "/quiz/genres/techno.mp3",
   },
   breakbeat: {
     id: "breakbeat",
     name: "БРЕЙКБИТ",
     hint: "ФАНКОВЫЙ ЛОМАНЫЙ БИТ, СИНКОПА, ПРИВОЗНОЙ БРЕЙК — 130–160 BPM",
     bpm: 150,
+    src: "/quiz/genres/breakbeat.mp3",
   },
   jungle: {
     id: "jungle",
     name: "ДЖАНГЛ",
     hint: "ПЛОТНЫЙ АМЕН-БРЕЙК, РАГГА-СТАБЫ, ГЛУБОКИЙ СУБ — ~170 BPM",
     bpm: 170,
+    src: "/quiz/genres/jungle.mp3",
   },
   dnb: {
     id: "dnb",
     name: "ДРАМ-Н-БЕЙС",
     hint: "ХАЛФТАЙМ-БИТ, ЧИСТЫЕ СНАРЫ, РОЛЛИНГ-СУБ — 170–180 BPM",
     bpm: 174,
+    src: "/quiz/genres/dnb.mp3",
   },
   breakcore: {
     id: "breakcore",
     name: "БРЕЙККОР",
     hint: "ИСТЕРИЧНЫЙ УСКОРЕННЫЙ БРЕЙК, СНАР-БУРСТЫ — 200–250 BPM",
     bpm: 220,
+    src: "/quiz/genres/breakcore.mp3",
   },
   ukg: {
     id: "ukg",
     name: "UK GARAGE",
     hint: "СВИНГ, 2-STEP, КАЧАЮЩИЙСЯ БАС — 130–140 BPM",
     bpm: 134,
+    src: "/quiz/genres/ukg.mp3",
   },
 };
 
