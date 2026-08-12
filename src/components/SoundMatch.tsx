@@ -16,7 +16,7 @@ const GENRES: { id: string; label: string }[] = [
 const BASE: Card[] = GENRES.flatMap((g) => [0, 1].map((i) => ({
   genre: g.id,
   label: g.label,
-  src: `/quiz/soundmatch/${g.id}_${i}.mp3`,
+  src: `/quiz/soundmatch/${g.id}_${i}.m4a`,
 })));
 
 function shuffle<T>(a: T[]): T[] {
