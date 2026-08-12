@@ -22,6 +22,14 @@ const tests = [
     desc: "ПОСЛУШАЙ ФРАГМЕНТ И ОПРЕДЕЛИ ЖАНР АНДЕГРАУНД СЦЕНЫ. ТЕХНО, БРЕЙКБИТ, ДЖАНГЛ, DNB, UK GARAGE.",
     meta: "5 ФРАГМЕНТОВ · 4 ВАРИАНТА · ПРОВЕРКА СЛУХА",
   },
+  {
+    href: "/quiz/soundmatch",
+    tag: "● ИГРА",
+    index: "03",
+    title: "SOUNDMATCH",
+    desc: "МУЗЫКАЛЬНАЯ ПАМЯТЬ: ОТКРОЙ КАРТЫ И НАЙДИ ПАРЫ ПО ЖАНРУ НА СЛУХ. BREAKBEAT, DNB, TECHNO, HOUSE, HARDTEK, JUNGLE.",
+    meta: "6 ПАР · НА СЛУХ · БЕЗ ПОДПИСЕЙ",
+  },
 ];
 
 export default function QuizPage() {
