@@ -157,6 +157,7 @@ const events: EventItem[] = [
       { name: "FCKNGD1" },
       { name: "DEADRIPPLE" },
       { name: "MRFLESH" },
+      { name: "DJ ENDE" },
       { name: "EQUICUE" },
     ],
   },
