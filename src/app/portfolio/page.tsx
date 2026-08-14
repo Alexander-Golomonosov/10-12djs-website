@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PortfolioVideos from "@/components/PortfolioVideos";
 
 export const metadata: Metadata = {
   title: "ПОРТФОЛИО | 10/12DJ'S",
@@ -148,6 +149,9 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
+
+      {/* videos */}
+      <PortfolioVideos />
 
       {/* contact */}
       <div className="mt-24 border-t-2 border-accent/20 pt-16">
