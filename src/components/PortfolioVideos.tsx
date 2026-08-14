@@ -20,9 +20,9 @@ const videos = defs.map((v) => ({
   alt: `10/12 DJ'S — ВИДЕО ${v.n}`,
 }));
 
-const wideColumn = videos.filter((v) => v.src.endsWith("-01.mp4") || v.src.endsWith("-02.mp4") || v.src.endsWith("-03.mp4") || v.src.endsWith("-04.mp4") || v.src.endsWith("-10.mp4"));
+const wideColumn = videos.filter((v) => v.src.endsWith("-01.mp4") || v.src.endsWith("-02.mp4") || v.src.endsWith("-03.mp4") || v.src.endsWith("-04.mp4") || v.src.endsWith("-10.mp4") || v.src.endsWith("-08.mp4"));
 
-const reelsColumnA = videos.filter((v) => v.src.endsWith("-05.mp4") || v.src.endsWith("-06.mp4") || v.src.endsWith("-07.mp4") || v.src.endsWith("-08.mp4"));
+const reelsColumnA = videos.filter((v) => v.src.endsWith("-05.mp4") || v.src.endsWith("-06.mp4") || v.src.endsWith("-07.mp4"));
 
 const reelsColumnB = videos.filter((v) => v.src.endsWith("-09.mp4") || v.src.endsWith("-11.mp4") || v.src.endsWith("-12.mp4"));
 
