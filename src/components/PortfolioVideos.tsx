@@ -1,23 +1,53 @@
-const videos = [
-  { n: "01", ratio: "aspect-video", lg: "lg:col-start-1 lg:row-start-1" },
-  { n: "02", ratio: "aspect-video", lg: "lg:col-start-1 lg:row-start-2" },
-  { n: "03", ratio: "aspect-video", lg: "lg:col-start-1 lg:row-start-3" },
-  { n: "04", ratio: "aspect-video", lg: "lg:col-start-1 lg:row-start-4" },
-  { n: "10", ratio: "aspect-video", lg: "lg:col-start-1 lg:row-start-5" },
-  { n: "05", ratio: "aspect-[9/16]", lg: "lg:col-start-2 lg:row-start-1" },
-  { n: "06", ratio: "aspect-[9/16]", lg: "lg:col-start-2 lg:row-start-2" },
-  { n: "07", ratio: "aspect-[9/16]", lg: "lg:col-start-2 lg:row-start-3" },
-  { n: "08", ratio: "aspect-[9/16]", lg: "lg:col-start-2 lg:row-start-4" },
-  { n: "09", ratio: "aspect-[3/4]", lg: "lg:col-start-3 lg:row-start-1" },
-  { n: "11", ratio: "aspect-[9/16]", lg: "lg:col-start-3 lg:row-start-2" },
-  { n: "12", ratio: "aspect-[9/16]", lg: "lg:col-start-3 lg:row-start-3" },
-].map((v) => ({
+const defs = [
+  { n: "01", ratio: "aspect-video" },
+  { n: "02", ratio: "aspect-video" },
+  { n: "03", ratio: "aspect-video" },
+  { n: "04", ratio: "aspect-video" },
+  { n: "10", ratio: "aspect-video" },
+  { n: "05", ratio: "aspect-[9/16]" },
+  { n: "06", ratio: "aspect-[9/16]" },
+  { n: "07", ratio: "aspect-[9/16]" },
+  { n: "08", ratio: "aspect-[9/16]" },
+  { n: "09", ratio: "aspect-[3/4]" },
+  { n: "11", ratio: "aspect-[9/16]" },
+  { n: "12", ratio: "aspect-[9/16]" },
+];
+
+const videos = defs.map((v) => ({
   src: `/portfolio/video-${v.n}.mp4`,
   poster: `/portfolio/poster-${v.n}.jpg`,
   ratio: v.ratio,
-  lg: v.lg,
   alt: `10/12 DJ'S — ВИДЕО ${v.n}`,
 }));
+
+const wideColumn = videos.filter((v) => v.src.endsWith("-01.mp4") || v.src.endsWith("-02.mp4") || v.src.endsWith("-03.mp4") || v.src.endsWith("-04.mp4") || v.src.endsWith("-10.mp4"));
+
+const reelsColumnA = videos.filter((v) => v.src.endsWith("-05.mp4") || v.src.endsWith("-06.mp4") || v.src.endsWith("-07.mp4") || v.src.endsWith("-08.mp4"));
+
+const reelsColumnB = videos.filter((v) => v.src.endsWith("-09.mp4") || v.src.endsWith("-11.mp4") || v.src.endsWith("-12.mp4"));
+
+const mobileOrder = [
+  "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
+].map((n) => videos.find((v) => v.src.endsWith(`-${n}.mp4`))).filter(
+  (v): v is (typeof videos)[number] => v !== undefined
+);
+
+function VideoItem({ v }: { v: (typeof videos)[number] }) {
+  return (
+    <div
+      className={`${v.ratio} overflow-hidden border border-border/20 bg-card transition-colors hover:border-accent/40`}
+    >
+      <video
+        src={v.src}
+        poster={v.poster}
+        className="h-full w-full object-contain"
+        controls
+        preload="metadata"
+        playsInline
+      />
+    </div>
+  );
+}
 
 export default function PortfolioVideos() {
   return (
@@ -30,22 +60,31 @@ export default function PortfolioVideos() {
       <p className="mt-6 max-w-3xl text-xs font-semibold leading-relaxed tracking-wider text-muted">
         ЖИВЫЕ ЗАПИСИ СЕТОВ НА НАШИХ ПЛОЩАДКАХ — БАРЫ, КЛУБЫ И РЕЙВЫ СПБ.
       </p>
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {videos.map((v) => (
-          <div
-            key={v.src}
-            className={`${v.ratio} ${v.lg} overflow-hidden border border-border/20 bg-card transition-colors hover:border-accent/40`}
-          >
-            <video
-              src={v.src}
-              poster={v.poster}
-              className="h-full w-full object-contain"
-              controls
-              preload="metadata"
-              playsInline
-            />
-          </div>
+
+      {/* mobile: single column, videos in sequence */}
+      <div className="mt-10 grid grid-cols-1 gap-4 lg:hidden">
+        {mobileOrder.map((v) => (
+          <VideoItem key={v.src} v={v} />
         ))}
+      </div>
+
+      {/* desktop: three independent columns */}
+      <div className="mt-10 hidden items-start gap-4 lg:flex">
+        <div className="flex w-full flex-col gap-4">
+          {wideColumn.map((v) => (
+            <VideoItem key={v.src} v={v} />
+          ))}
+        </div>
+        <div className="flex w-full flex-col gap-4">
+          {reelsColumnA.map((v) => (
+            <VideoItem key={v.src} v={v} />
+          ))}
+        </div>
+        <div className="flex w-full flex-col gap-4">
+          {reelsColumnB.map((v) => (
+            <VideoItem key={v.src} v={v} />
+          ))}
+        </div>
       </div>
     </div>
   );
