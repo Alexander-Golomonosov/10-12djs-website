@@ -9,7 +9,6 @@ const defs = [
   { n: "07", ratio: "aspect-[9/16]" },
   { n: "08", ratio: "aspect-[9/16]" },
   { n: "09", ratio: "aspect-[3/4]" },
-  { n: "11", ratio: "aspect-[9/16]" },
   { n: "12", ratio: "aspect-[9/16]" },
   { n: "13", ratio: "aspect-[9/16]" },
   { n: "14", ratio: "aspect-[9/16]" },
@@ -26,10 +25,10 @@ const wideColumn = videos.filter((v) => v.src.endsWith("-01.mp4") || v.src.endsW
 
 const reelsColumnA = videos.filter((v) => v.src.endsWith("-05.mp4") || v.src.endsWith("-06.mp4") || v.src.endsWith("-07.mp4"));
 
-const reelsColumnB = videos.filter((v) => v.src.endsWith("-09.mp4") || v.src.endsWith("-11.mp4") || v.src.endsWith("-12.mp4") || v.src.endsWith("-14.mp4"));
+const reelsColumnB = videos.filter((v) => v.src.endsWith("-09.mp4") || v.src.endsWith("-12.mp4") || v.src.endsWith("-14.mp4"));
 
 const mobileOrder = [
-  "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
+  "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "12", "13", "14",
 ].map((n) => videos.find((v) => v.src.endsWith(`-${n}.mp4`))).filter(
   (v): v is (typeof videos)[number] => v !== undefined
 );
